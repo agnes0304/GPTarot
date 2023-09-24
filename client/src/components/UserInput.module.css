@@ -40,7 +40,7 @@ input:valid ~ label {
 .clearButton {
   position: absolute;
   right: 15px;
-  top: 50%;
+  top: 53%;
   transform: translateY(-50%);
   background: transparent;
   border: none;

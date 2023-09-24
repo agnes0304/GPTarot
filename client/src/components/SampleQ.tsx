@@ -1,5 +1,5 @@
 import { FC } from "react";
-import SampleQData from "./data/SampleQData";
+import SampleQData from "../data/SampleQData";
 import classes from "./SampleQ.module.css";
 
 interface SampleQProps {

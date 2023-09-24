@@ -1,10 +1,10 @@
 import "./App.css";
-import UserInput from "./UserInput";
+import Ask from "./pages/Ask";
 
 const App = () => {
   return (
     <>
-      <UserInput />
+      <Ask />
     </>
   );
 };
