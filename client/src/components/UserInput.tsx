@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { FC } from "react";
 import classes from "./UserInput.module.css";
 import SampleQ from "./SampleQ";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const UserInput = () => {
-  const [value, setValue] = useState("");
+interface UserInputProps {
+  value: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+}
 
+const UserInput: FC<UserInputProps> = ({ setValue, value }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };

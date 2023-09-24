@@ -1,9 +1,18 @@
-const CardDeck = () => {
+import { FC } from "react";
+import Spread from "./Spread";
+
+interface CardDeckProps {
+  selectedValue: string;
+}
+
+const CardDeck: FC<CardDeckProps> = ({ selectedValue }) => {
   return (
-    <>
-      <div>사용자가 선택한 질문</div>
-      <div>카드덱 스프레드</div>
-    </>
+    <div>
+      <div>{selectedValue}</div>
+      <div>
+        <Spread />
+      </div>
+    </div>
   );
 };
 
