@@ -7,6 +7,27 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-main: #9400FF;
+  --color-sub: #AED2FF;
+
+  --color-state-info: #2F80ED;
+  --color-state-success: #27AE60;
+  --color-state-warning: #E2B93B;
+  --color-state-error: #EB5757;
+
+  --color-black-1: #000;
+  --color-black-2: #1D1D1D;
+  --color-black-3: #282828;
+  --color-white: #fff;
+
+  --color-gray-1: #333333;
+  --color-gray-2: #4F4F4F;
+  --color-gray-3: #828282;
+  --color-gray-4: #BDBDBD;
+  --color-gray-5: #E0E0E0;
+}
+
 /* Remove default margin */
 body,
 h1,

@@ -1,7 +1,12 @@
 import "./App.css";
+import UserInput from "./UserInput";
 
 const App = () => {
-  return <></>;
+  return (
+    <>
+      <UserInput />
+    </>
+  );
 };
 
 export default App;
