@@ -1,0 +1,16 @@
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* style */
+  background-color: #f08a5d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #f08a5d;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
