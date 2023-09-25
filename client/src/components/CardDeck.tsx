@@ -3,7 +3,7 @@ import Spread from "./Spread";
 
 interface CardDeckProps {
   selectedPrompt: string;
-  setCard: React.Dispatch<React.SetStateAction<number>>;
+  setCard: React.Dispatch<React.SetStateAction<{ korName: string; engName: string; id: number; }>>;
 }
 
 const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
@@ -11,7 +11,7 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
     <div>
       <div>{selectedPrompt}</div>
       <div>
-        <Spread setCard={setCard} />
+        <Spread selectedPromt={selectedPrompt} setCard={setCard} />
       </div>
     </div>
   );
