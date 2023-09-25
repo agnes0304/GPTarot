@@ -25,7 +25,7 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
         prompt: selectedPrompt,
         card: selectedCard?.engName,
       });
-      setApiResponse(response.data);
+      setApiResponse(response.data.choices[0].text);
     } catch (error) {
       console.error(error);
     }

@@ -1,8 +1,8 @@
 import { createContext, useState, useContext, ReactNode, FC } from "react";
 
 interface ApiResponseContextProps {
-  apiResponse: any; // TODO: type this
-  setApiResponse: React.Dispatch<React.SetStateAction<any>>; // TODO: type this
+  apiResponse: string; 
+  setApiResponse: React.Dispatch<React.SetStateAction<string>>; // TODO: type this
 }
 
 interface ApiResponseProviderProps {
@@ -25,7 +25,7 @@ export const useApiResponse = () => {
 export const ApiResponseProvider: FC<ApiResponseProviderProps> = ({
   children,
 }) => {
-  const [apiResponse, setApiResponse] = useState<any>(null);
+  const [apiResponse, setApiResponse] = useState<string>("");
 
   return (
     <ApiResponseContext.Provider value={{ apiResponse, setApiResponse }}>
