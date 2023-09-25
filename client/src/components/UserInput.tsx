@@ -5,17 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 interface UserInputProps {
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  prompt: string;
+  setPrompt: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const UserInput: FC<UserInputProps> = ({ setValue, value }) => {
+const UserInput: FC<UserInputProps> = ({ setPrompt, prompt }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    setPrompt(event.target.value);
   };
 
   const handleClear = () => {
-    setValue("");
+    setPrompt("");
   };
 
   return (
@@ -25,8 +25,8 @@ const UserInput: FC<UserInputProps> = ({ setValue, value }) => {
           className={classes.userInput}
           required
           type="text"
-          value={value}
-          onChange={handleChange}
+          value={prompt}
+          onChange={(e)=>handleChange(e)}
         />
         <button
           className={classes.clearButton}
@@ -37,8 +37,8 @@ const UserInput: FC<UserInputProps> = ({ setValue, value }) => {
         </button>
         <label className={classes.userInputLabel}>무엇이 궁금하신가요?</label>
       </div>
-      <p>test: {value}</p>
-      <SampleQ setValue={setValue} />
+      <p>test: {prompt}</p>
+      <SampleQ setPrompt={setPrompt} />
     </>
   );
 };

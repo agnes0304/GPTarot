@@ -2,15 +2,16 @@ import { FC } from "react";
 import Spread from "./Spread";
 
 interface CardDeckProps {
-  selectedValue: string;
+  selectedPrompt: string;
+  setCard: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const CardDeck: FC<CardDeckProps> = ({ selectedValue }) => {
+const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
   return (
     <div>
-      <div>{selectedValue}</div>
+      <div>{selectedPrompt}</div>
       <div>
-        <Spread />
+        <Spread setCard={setCard} />
       </div>
     </div>
   );

@@ -3,12 +3,19 @@ import UserInput from "../components/UserInput";
 import CardDeck from "../components/CardDeck";
 
 const Ask: FC = () => {
-  const [value, setValue] = useState("");
-  
+  const [prompt, setPrompt] = useState("");
+  const [card, setCard] = useState<{
+    korName: string;
+    engName: string;
+    id: number;
+  }>({ korName: "", engName: "", id: 0 });
+//   const [bodyData, setBodyData] = useState({});
+
   return (
     <>
-      <UserInput value={value} setValue={setValue} />
-      <CardDeck selectedValue={value} />
+      <UserInput prompt={prompt} setPrompt={setPrompt} />
+      <CardDeck selectedPrompt={prompt} setCard={setCard} />
+      <p>{card.korName}</p>
     </>
   );
 };
