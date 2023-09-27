@@ -4,6 +4,7 @@ import classes from "./Spread.module.css";
 import CardsData from "../data/CardsData";
 import axios from "axios";
 import { useApiResponse } from "../context/ApiResponse";
+import Loading from "./Loading";
 
 interface SpreadProps {
   selectedPrompt: string;
@@ -50,7 +51,7 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
   return (
     <div className={classes.main}>
       {isLoading ? (
-        <div>답변을 가지고 오고 있어요.</div>
+        <Loading />
       ) : (
         <>
           <div

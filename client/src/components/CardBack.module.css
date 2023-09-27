@@ -4,11 +4,12 @@
   height: 100%;
   backface-visibility: hidden;
   /* style */
-  background-color: #f08a5d;
+  background-color: #231f50;
   color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  border: 10px solid #f08a5d;
+  border: 10px solid #231f50;
   border-radius: 10px;
   justify-content: center;
   font-size: 24px;
@@ -16,5 +17,25 @@
 }
 
 .cardBack p {
+  height: 100%;
   font-size: 0.8rem;
+  overflow: auto;
 }
+
+/* 스크롤바 스타일링 */
+.cardBack p::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cardBack p::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cardBack p::-webkit-scrollbar-thumb {
+  background: #9e99fe;
+}
+
+.cardBack p::-webkit-scrollbar-thumb:hover {
+  background: #847ef9;
+}
+

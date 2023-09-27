@@ -4,11 +4,11 @@
   height: 100%;
   backface-visibility: hidden;
   /* style */
-  background-color: #6a2c70;
+  background-color: #231F50;
   color: #fff;
   display: flex;
   align-items: center;
-  border: 10px solid #6a2c70;
+  border: 10px solid #231F50;
   border-radius: 10px;
   justify-content: center;
   font-size: 24px;

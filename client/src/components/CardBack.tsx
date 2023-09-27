@@ -5,9 +5,9 @@ import { useApiResponse } from "../context/ApiResponse";
 const CardBack: FC = () => {
   const { apiResponse } = useApiResponse();
   return (
-    <div className={classes.cardBack}>
+    <div className={`${classes.cardBack} absolute w-full h-full flex items-center justify-center text-white bg-indigo-900 rounded-xl rotate-180`}>
       <h1>{apiResponse.card}</h1>
-      <p>{apiResponse.result}</p>
+      <p className="overflow-auto text-xs">{apiResponse.result}</p>
     </div>
   );
 };
