@@ -6,7 +6,6 @@ const Result: FC = () => {
   return (
     <div>
       <Card />
-      {/* <p>{apiResponse}</p> */}
       <Actions />
     </div>
   );
