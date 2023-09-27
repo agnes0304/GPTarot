@@ -24,7 +24,8 @@
 
 /* 스크롤바 스타일링 */
 .cardBack p::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  border-radius: 20px;
 }
 
 .cardBack p::-webkit-scrollbar-track {
@@ -32,10 +33,12 @@
 }
 
 .cardBack p::-webkit-scrollbar-thumb {
-  background: #9e99fe;
+  background: rgba(177, 177, 255, 0.5);
+  border-radius: 20px;
 }
 
 .cardBack p::-webkit-scrollbar-thumb:hover {
-  background: #847ef9;
+  background: rgba(177, 177, 255, 0.5);
+  border-radius: 20px;
 }
 
