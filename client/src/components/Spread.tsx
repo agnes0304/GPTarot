@@ -19,13 +19,20 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
     if (selectedCard) {
       setCard(selectedCard);
     }
-
+    console.log(selectedPrompt);
     try {
       const response = await axios.post("http://localhost:8080/completions", {
         prompt: selectedPrompt,
-        card: selectedCard?.engName,
+        card: selectedCard?.korName,
       });
-      setApiResponse(response.data.choices[0].text);
+      // console.log(response.data);
+      if (selectedCard) {
+        setApiResponse({
+          card: selectedCard?.korName,
+          prompt: selectedPrompt,
+          result: response.data,
+        });
+      }
     } catch (error) {
       console.error(error);
     }

@@ -1,16 +1,23 @@
 import { createContext, useState, useContext, ReactNode, FC } from "react";
 
+interface ApiResponseData {
+  card: string;
+  prompt: string;
+  result: string;
+}
+
 interface ApiResponseContextProps {
-  apiResponse: string; 
-  setApiResponse: React.Dispatch<React.SetStateAction<string>>; // TODO: type this
+  apiResponse: ApiResponseData;
+  setApiResponse: React.Dispatch<React.SetStateAction<ApiResponseData>>;
 }
 
 interface ApiResponseProviderProps {
   children: ReactNode;
 }
 
-export const ApiResponseContext =
-  createContext<ApiResponseContextProps | null>(null);
+export const ApiResponseContext = createContext<ApiResponseContextProps | null>(
+  null
+);
 
 export const useApiResponse = () => {
   const context = useContext(ApiResponseContext);
@@ -25,7 +32,11 @@ export const useApiResponse = () => {
 export const ApiResponseProvider: FC<ApiResponseProviderProps> = ({
   children,
 }) => {
-  const [apiResponse, setApiResponse] = useState<string>("");
+  const [apiResponse, setApiResponse] = useState<ApiResponseData>({
+    card: "",
+    prompt: "",
+    result: "",
+  });
 
   return (
     <ApiResponseContext.Provider value={{ apiResponse, setApiResponse }}>

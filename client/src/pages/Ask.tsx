@@ -9,7 +9,7 @@ const Ask: FC = () => {
     engName: string;
     id: number;
   }>({ korName: "", engName: "", id: 0 });
-//   const [bodyData, setBodyData] = useState({});
+  //   const [bodyData, setBodyData] = useState({});
 
   return (
     <>

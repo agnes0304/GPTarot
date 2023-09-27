@@ -11,7 +11,7 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
     <div>
       <div>{selectedPrompt}</div>
       <div>
-        <Spread selectedPromt={selectedPrompt} setCard={setCard} />
+        <Spread selectedPrompt={selectedPrompt} setCard={setCard} />
       </div>
     </div>
   );
