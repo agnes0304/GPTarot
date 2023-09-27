@@ -1,14 +1,14 @@
 import "./App.css";
 import Ask from "./pages/Ask";
 import { ApiResponseProvider } from "./context/ApiResponse";
-import Result from "./pages/Result";
+// import Result from "./pages/Result";
 
 const App = () => {
   return (
     <>
       <ApiResponseProvider>
         <Ask />
-        <Result />
+        {/* <Result /> */}
       </ApiResponseProvider>
     </>
   );
