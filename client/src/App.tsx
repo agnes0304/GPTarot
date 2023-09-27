@@ -10,7 +10,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Ask />} />
-          <Route path="/answer" element={<Result />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
       </BrowserRouter>
     </ApiResponseProvider>

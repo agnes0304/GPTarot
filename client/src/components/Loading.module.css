@@ -1,0 +1,53 @@
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.load{
+    margin-top: 16px;
+}
+
+.ring {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto;
+  border: 2px solid var(--color-main);
+  border-radius: 100%;
+}
+
+.ballHolder {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12px;
+  height: 45px;
+  left: 18px;
+  top: 0px;
+}
+
+.ball {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: var(--color-main);
+}
+
+.load .ballHolder {
+  animation: loading 1.5s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
