@@ -1,3 +1,8 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* reset css */
 
 /* Box sizing rules */
@@ -8,24 +13,24 @@
 }
 
 :root {
-  --color-main: #9400FF;
-  --color-sub: #AED2FF;
+  --color-main: #9400ff;
+  --color-sub: #aed2ff;
 
-  --color-state-info: #2F80ED;
-  --color-state-success: #27AE60;
-  --color-state-warning: #E2B93B;
-  --color-state-error: #EB5757;
+  --color-state-info: #2f80ed;
+  --color-state-success: #27ae60;
+  --color-state-warning: #e2b93b;
+  --color-state-error: #eb5757;
 
   --color-black-1: #000;
-  --color-black-2: #1D1D1D;
+  --color-black-2: #1d1d1d;
   --color-black-3: #282828;
   --color-white: #fff;
 
   --color-gray-1: #333333;
-  --color-gray-2: #4F4F4F;
+  --color-gray-2: #4f4f4f;
   --color-gray-3: #828282;
-  --color-gray-4: #BDBDBD;
-  --color-gray-5: #E0E0E0;
+  --color-gray-4: #bdbdbd;
+  --color-gray-5: #e0e0e0;
 }
 
 /* Remove default margin */
