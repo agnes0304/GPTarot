@@ -9,11 +9,27 @@ const Ask: FC = () => {
     engName: string;
     id: number;
   }>({ korName: "", engName: "", id: 0 });
+  const [showCardDeck, setShowCardDeck] = useState(false);
+
+  const handleEnter = (event?: React.FormEvent<HTMLFormElement>) => {
+    if (event) {
+      event.preventDefault();
+    }
+    // CardDeck render
+    setShowCardDeck(true);
+  };
 
   return (
     <>
-      <UserInput prompt={prompt} setPrompt={setPrompt} />
-      <CardDeck selectedPrompt={prompt} setCard={setCard} />
+      {!showCardDeck && (
+        <UserInput
+          prompt={prompt}
+          setPrompt={setPrompt}
+          handleEnter={handleEnter}
+        />
+      )}
+      {showCardDeck && <CardDeck selectedPrompt={prompt} setCard={setCard} />}
+      {/* 뒤로가기 버튼이 있어야 할 듯 */}
     </>
   );
 };

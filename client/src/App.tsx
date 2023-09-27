@@ -1,16 +1,19 @@
 import "./App.css";
 import Ask from "./pages/Ask";
 import { ApiResponseProvider } from "./context/ApiResponse";
-// import Result from "./pages/Result";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Result from "./pages/Result";
 
 const App = () => {
   return (
-    <>
-      <ApiResponseProvider>
-        <Ask />
-        {/* <Result /> */}
-      </ApiResponseProvider>
-    </>
+    <ApiResponseProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Ask />} />
+          <Route path="/answer" element={<Result />} />
+        </Routes>
+      </BrowserRouter>
+    </ApiResponseProvider>
   );
 };
 

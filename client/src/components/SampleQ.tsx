@@ -4,13 +4,15 @@ import classes from "./SampleQ.module.css";
 
 interface SampleQProps {
   setPrompt: React.Dispatch<React.SetStateAction<string>>;
+  handleEnter: () =>void;
 }
 
-const SampleQ: FC<SampleQProps> = ({ setPrompt }) => {
+const SampleQ: FC<SampleQProps> = ({ setPrompt, handleEnter }) => {
   const sampleClickHandler = (
     event: React.MouseEvent<HTMLLIElement, MouseEvent>
   ) => {
     setPrompt(event.currentTarget.innerText);
+    handleEnter();
   };
 
   return (

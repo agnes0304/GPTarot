@@ -7,9 +7,10 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 interface UserInputProps {
   prompt: string;
   setPrompt: React.Dispatch<React.SetStateAction<string>>;
+  handleEnter: (event?: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const UserInput: FC<UserInputProps> = ({ setPrompt, prompt }) => {
+const UserInput: FC<UserInputProps> = ({ setPrompt, prompt, handleEnter }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPrompt(event.target.value);
   };
@@ -20,7 +21,7 @@ const UserInput: FC<UserInputProps> = ({ setPrompt, prompt }) => {
 
   return (
     <>
-      <div className={classes.userInputContainer}>
+      <form className={classes.userInputContainer} onSubmit={e => handleEnter(e)}>
         <input
           className={classes.userInput}
           required
@@ -36,9 +37,9 @@ const UserInput: FC<UserInputProps> = ({ setPrompt, prompt }) => {
           <FontAwesomeIcon icon={faXmark} />
         </button>
         <label className={classes.userInputLabel}>무엇이 궁금하신가요?</label>
-      </div>
+      </form>
       <p>test: {prompt}</p>
-      <SampleQ setPrompt={setPrompt} />
+      <SampleQ setPrompt={setPrompt} handleEnter={handleEnter} />
     </>
   );
 };
