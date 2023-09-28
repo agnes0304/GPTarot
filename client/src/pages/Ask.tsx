@@ -4,7 +4,7 @@ import CardDeck from "../components/CardDeck";
 
 const Ask: FC = () => {
   const [prompt, setPrompt] = useState("");
-  const [/*card*/, setCard] = useState<{
+  const [, /*card*/ setCard] = useState<{
     korName: string;
     engName: string;
     id: number;
