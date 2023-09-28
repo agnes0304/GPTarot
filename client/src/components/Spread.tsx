@@ -5,6 +5,7 @@ import CardsData from "../data/CardsData";
 import axios from "axios";
 import { useApiResponse } from "../context/ApiResponse";
 import Loading from "./Loading";
+import { nanoid } from "nanoid";
 
 interface SpreadProps {
   selectedPrompt: string;
@@ -14,6 +15,7 @@ interface SpreadProps {
 }
 
 const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
+  const id = nanoid(10);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { setApiResponse } = useApiResponse();
@@ -39,7 +41,8 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
           prompt: selectedPrompt,
           result: response.data,
         });
-        navigate("/answer");
+
+        navigate(`/answer/${id}`);
       }
     } catch (error) {
       console.error(error);
