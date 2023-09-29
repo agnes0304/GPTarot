@@ -60,7 +60,7 @@ const CardFront: FC = () => {
   }, [apiResponse.cardId]);
 
   return (
-    <div className={`${classes.cardFront} absolute w-full h-100 bg-[#231F50] text-white flex items-center justify-center rounded-[10px] border-[10px] border-[#231f50]`} ref={cardRef}>
+    <div className={`${classes.cardFront} absolute w-full h-full bg-[#231F50] text-white flex items-center justify-center rounded-[10px] border-[10px] border-[#231f50] shadow-lg shadow-violet-400/30`} ref={cardRef}>
       <img src={cardImagePath} alt={apiResponse.card} />
     </div>
   );

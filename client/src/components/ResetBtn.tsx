@@ -16,19 +16,13 @@ const ResetBtn: FC<Props> = ({ isNew }) => {
 
   return (
     <button
-      className="flex justify-center items-center w-max h-[40px] p-4 rounded-[50%] cursor-pointer hover:text-[#c9c9ff] hover:border-[#c9c9ff]"
+      className="flex justify-center items-center w-max h-[40px] p-4 rounded-[50%] cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400"
       type="button"
       onClick={handleClick}
     >
-      {/* <div className="flex w-full">
-        <span className="material-symbols-outlined w-[25px] h-[25px] hover:text-[#c9c9ff]">
-          playing_cards
-        </span>
-        <p className="ml-[4px]">질문하러 가기</p>
-      </div> */}
       {isNew ? (
         <div className="flex w-full">
-          <span className="material-symbols-outlined w-[25px] h-[25px] hover:text-[#c9c9ff]">
+          <span className="material-symbols-outlined w-[25px] h-[25px] cursor-pointer text-violet-400/50 hover:text-violet-400">
             playing_cards
           </span>
           <p className="ml-[4px]">질문하러 가기</p>

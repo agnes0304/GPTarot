@@ -12,12 +12,19 @@ interface SpreadProps {
   setCard: React.Dispatch<
     React.SetStateAction<{ korName: string; engName: string; id: number }>
   >;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
+const Spread: FC<SpreadProps> = ({
+  selectedPrompt,
+  setCard,
+  isLoading,
+  setIsLoading,
+}) => {
   const id = nanoid(10);
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const { setApiResponse } = useApiResponse();
 
   const handleClick = async (e) => {
@@ -54,7 +61,28 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
 
   return (
     <div className={`${classes.main} grid h-[50vmax] place-items-center`}>
-      {isLoading ? (
+      <div
+        className={`${classes.card} ${classes.c1}`}
+        onClick={(e) => handleClick(e)}
+      ></div>
+      <div
+        className={`${classes.card} ${classes.c2}`}
+        onClick={(e) => handleClick(e)}
+      ></div>
+      <div
+        className={`${classes.card} ${classes.c3}`}
+        onClick={(e) => handleClick(e)}
+      ></div>
+      <div
+        className={`${classes.card} ${classes.c4}`}
+        onClick={(e) => handleClick(e)}
+      ></div>
+      <div
+        className={`${classes.card} ${classes.c5}`}
+        onClick={(e) => handleClick(e)}
+      ></div>
+
+      {/* {isLoading ? (
         <Loading />
       ) : (
         <>
@@ -74,8 +102,12 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
             className={`${classes.card} ${classes.c4}`}
             onClick={(e) => handleClick(e)}
           ></div>
+          <div
+            className={`${classes.card} ${classes.c5}`}
+            onClick={(e) => handleClick(e)}
+          ></div>
         </>
-      )}
+      )} */}
     </div>
   );
 };

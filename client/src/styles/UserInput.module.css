@@ -1,11 +1,6 @@
 .userInput {
   border: 1.5px solid var(--color-gray-4);
-  width: 100%;
-  border-radius: 1rem;
-  background: none;
-  padding: 1rem;
   font-size: 1rem;
-  color: var(--color-gray-3);
   transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
@@ -21,21 +16,21 @@
 .userInput:focus,
 input:valid {
   outline: none;
-  border: 1.5px solid var(--color-main);
-  color: var(--color-main);
+  border: 1.5px solid var(--color-dark-main);
+  color: var(--color-dark-main);
 }
 
 .userInput:focus ~ label,
 input:valid ~ label {
   transform: translateY(-50%) scale(0.8);
-  background-color: white;
+  background-color: var(--color-dark-bg);
   padding: 0.2em;
-  color: var(--color-main);
+  color: var(--color-dark-main);
 }
 
 .userInput:focus ~ button,
 input:valid ~ button {
-  color: var(--color-main);
-  background-color: white;
+  color: var(--color-dark-main);
+  background-color: var(--color-dark-bg);
   padding-left: 8px;
 }

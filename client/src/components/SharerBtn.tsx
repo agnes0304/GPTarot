@@ -23,7 +23,7 @@ const SharerBtn: FC = () => {
       const response = await axios.post("http://localhost:8080/save", bodyData);
 
       // 공유가능한 url 생성
-      // https에서 테스트 가능.
+      // https에서 테스트 가능
       const copyUrl = async () => {
         try {
           const url = `http://localhost:5173/answer/${nanoId}`;
@@ -43,7 +43,7 @@ const SharerBtn: FC = () => {
   };
 
   return (
-    <button className="flex justify-center items-center w-[40px] h-[40px] p-4 rounded-[50%] cursor-pointer hover:text-[#c9c9ff] hover:border-[#c9c9ff]" type="button" onClick={handleClick}>
+    <button className="flex justify-center items-center w-[40px] h-[40px] p-4 rounded-[50%] cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400" type="button" onClick={handleClick}>
       <FontAwesomeIcon icon={faArrowUpFromBracket} />
     </button>
   );

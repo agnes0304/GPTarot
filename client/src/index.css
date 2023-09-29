@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* reset css */
-
-/* Box sizing rules */
 *,
 *::before,
 *::after {
@@ -14,13 +10,20 @@
 }
 
 :root {
-  --color-main: #9400ff;
-  --color-sub: #aed2ff;
+  /* dark */
+  --color-dark-bg: #121212;
+  --color-dark-main: #bb86fc;
+  --color-dark-main-variant: #3700b3;
+  --color-dark-sub: #03Dac6;
+  --color-dark-error: #cf6679;
 
-  --color-state-info: #2f80ed;
-  --color-state-success: #27ae60;
-  --color-state-warning: #e2b93b;
-  --color-state-error: #eb5757;
+  /* light */
+  --color-light-bg: #121212;
+  --color-light-main: #6200ee;
+  --color-light-main-variant: #3700b3;
+  --color-light-sub: #03Dac6;
+  --color-light-sub-variant: #018786;
+  --color-light-error: #b00020;
 
   --color-black-1: #000;
   --color-black-2: #1d1d1d;
@@ -53,6 +56,7 @@ body {
   display: grid;
   place-items: center;
   height: 100vh;
+  background-color: #121212;
 }
 /* Remove list styles on ul, ol elements */
 ul,
