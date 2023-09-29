@@ -1,4 +1,3 @@
-import "./App.css";
 import Ask from "./pages/Ask";
 import { ApiResponseProvider } from "./context/ApiResponse";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
