@@ -2,6 +2,7 @@ import { createContext, useState, useContext, ReactNode, FC } from "react";
 
 interface ApiResponseData {
   card: string;
+  cardId: number;
   prompt: string;
   result: string;
 }
@@ -34,6 +35,7 @@ export const ApiResponseProvider: FC<ApiResponseProviderProps> = ({
 }) => {
   const [apiResponse, setApiResponse] = useState<ApiResponseData>({
     card: "",
+    cardId: 100,
     prompt: "",
     result: "",
   });

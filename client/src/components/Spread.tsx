@@ -38,6 +38,7 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
       if (selectedCard) {
         setApiResponse({
           card: selectedCard?.korName,
+          cardId: selectedCard?.id,
           prompt: selectedPrompt,
           result: response.data,
         });
