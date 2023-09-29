@@ -19,9 +19,34 @@ const UserInput: FC<UserInputProps> = ({ setPrompt, prompt, handleEnter }) => {
     setPrompt("");
   };
 
+  // return (
+  //   <>
+  //     <form className={classes.userInputContainer} onSubmit={e => handleEnter(e)}>
+  //       <input
+  //         className={classes.userInput}
+  //         required
+  //         type="text"
+  //         value={prompt}
+  //         onChange={(e)=>handleChange(e)}
+  //       />
+  //       <button
+  //         className={classes.clearButton}
+  //         onClick={handleClear}
+  //         type="button"
+  //       >
+  //         <FontAwesomeIcon icon={faXmark} />
+  //       </button>
+  //       <label className={classes.userInputLabel}>무엇이 궁금하신가요?</label>
+  //     </form>
+  //     <p>test: {prompt}</p>
+  //     <SampleQ setPrompt={setPrompt} handleEnter={handleEnter} />
+  //   </>
+  // );
+
+  // tailwindcss
   return (
     <>
-      <form className={classes.userInputContainer} onSubmit={e => handleEnter(e)}>
+      <form className="relative" onSubmit={e => handleEnter(e)}>
         <input
           className={classes.userInput}
           required
@@ -30,7 +55,7 @@ const UserInput: FC<UserInputProps> = ({ setPrompt, prompt, handleEnter }) => {
           onChange={(e)=>handleChange(e)}
         />
         <button
-          className={classes.clearButton}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-transparent border-none cursor-pointer text-sm text-gray-400"
           onClick={handleClear}
           type="button"
         >
