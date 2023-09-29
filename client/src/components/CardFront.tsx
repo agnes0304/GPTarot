@@ -38,10 +38,6 @@ const CardFront: FC = () => {
     setcardImagePath(path);
   }, []);
 
-  // context에서 가지고 오게 되면 링크 공유할 때 문제가 생김.
-  // 링크 공유 시에는 db에 cardId를 저장하고 그 데이터를 가지고 오는 방식으로 변경해야 함.
-  // 링크로 들어온 유저는 context가 없음.
-
   return (
     <div className={classes.cardFront} ref={cardRef}>
       <img src={cardImagePath} alt={apiResponse.card} />

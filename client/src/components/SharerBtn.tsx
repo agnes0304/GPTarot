@@ -15,6 +15,7 @@ const SharerBtn: FC = () => {
     prompt: apiResponse.prompt,
     card: apiResponse.card,
     result: apiResponse.result,
+    cardId: apiResponse.cardId,
   };
 
   const handleClick = async () => {
