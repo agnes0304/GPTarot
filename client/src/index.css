@@ -48,6 +48,12 @@ dd {
   margin: 0;
 }
 
+/* 일단 넣음 */
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
 /* Remove list styles on ul, ol elements */
 ul,
 ol {

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
-import classes from "./SharerBtn.module.css";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 import { useApiResponse } from "../context/ApiResponse";
@@ -28,7 +27,7 @@ const SharerBtn: FC = () => {
   };
 
   return (
-    <button className={classes.shareBtn} type="button" onClick={handleClick}>
+    <button className="flex justify-center items-center w-[40px] h-[40px] p-4 rounded-[50%] cursor-pointer hover:text-[#c9c9ff] hover:border-[#c9c9ff]" type="button" onClick={handleClick}>
       <FontAwesomeIcon icon={faArrowUpFromBracket} />
     </button>
   );

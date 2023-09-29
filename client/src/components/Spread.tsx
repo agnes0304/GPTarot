@@ -53,7 +53,7 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard }) => {
   };
 
   return (
-    <div className={classes.main}>
+    <div className={`${classes.main} grid h-[50vmax] place-items-center`}>
       {isLoading ? (
         <Loading />
       ) : (

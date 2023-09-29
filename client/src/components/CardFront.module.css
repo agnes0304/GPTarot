@@ -1,16 +1,4 @@
 .cardFront {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   backface-visibility: hidden;
-  /* style */
-  background-color: #231F50;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  border: 10px solid #231F50;
-  border-radius: 10px;
-  justify-content: center;
-  font-size: 24px;
   transform: rotateY(0deg);
 }

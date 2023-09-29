@@ -10,12 +10,12 @@ const Card: FC = () => {
     setIsFlipped(!isFlipped);
   };
   return (
-    <div className={classes.main}>
+    <div className="grid place-items-center">
       <div
         className={`${classes.card} ${isFlipped ? `${classes.flipped}` : ""}`}
         onClick={flipHandler}
       >
-        <div className={classes.cardInner}>
+        <div className={`${classes.cardInner} w-full h-full relative`}>
           <CardFront />
           <CardBack />
         </div>

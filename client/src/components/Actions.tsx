@@ -1,11 +1,10 @@
 import { FC } from "react";
 import SharerBtn from "./SharerBtn";
 import ResetBtn from "./ResetBtn";
-import classes from "./Actions.module.css";
 
 const Actions: FC = () => {
   return (
-    <div className={classes.btnContainer}>
+    <div className="flex gap-2 justify-center items-center mt-4">
       <SharerBtn />
       <ResetBtn />
     </div>

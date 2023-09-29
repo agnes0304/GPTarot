@@ -60,9 +60,3 @@
 .c4:hover {
   transform: translateX(50px) rotate(0deg) !important;
 }
-
-.main {
-  display: grid;
-  height: 50vmax;
-  place-items: center;
-}

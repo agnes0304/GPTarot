@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import classes from "./ResetBtn.module.css";
 
 const ResetBtn = () => {
   const navigate = useNavigate();
@@ -10,7 +9,7 @@ const ResetBtn = () => {
   }
 
   return (
-    <button className={classes.resetBtn} type="button" onClick={handleClick}>
+    <button className="flex justify-center items-center w-[40px] h-[40px] p-4 rounded-[50%] cursor-pointer hover:text-[#c9c9ff] hover:border-[#c9c9ff]" type="button" onClick={handleClick}>
       <FontAwesomeIcon icon={faArrowRotateRight} />
     </button>
   );
