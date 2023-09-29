@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import classes from "./Spread.module.css";
+import classes from "../styles/Spread.module.css";
 import CardsData from "../data/CardsData";
 import axios from "axios";
 import { useApiResponse } from "../context/ApiResponse";

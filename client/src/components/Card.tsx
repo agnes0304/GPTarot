@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
-import classes from "./Card.module.css";
+import classes from "../styles/Card.module.css";
 
 const Card: FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);

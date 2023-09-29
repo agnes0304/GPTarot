@@ -1,5 +1,5 @@
 import { FC, useRef, useEffect, useState } from "react";
-import classes from "./CardFront.module.css";
+import classes from "../styles/CardFront.module.css";
 import VanillaTilt from "vanilla-tilt";
 import { useApiResponse } from "../context/ApiResponse";
 

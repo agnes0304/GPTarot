@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./CardBack.module.css";
+import classes from "../styles/CardBack.module.css";
 import { useApiResponse } from "../context/ApiResponse";
 
 const CardBack: FC = () => {

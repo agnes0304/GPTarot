@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./UserInput.module.css";
+import classes from "../styles/UserInput.module.css";
 import SampleQ from "./SampleQ";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
