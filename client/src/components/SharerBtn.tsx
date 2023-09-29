@@ -19,7 +19,23 @@ const SharerBtn: FC = () => {
 
   const handleClick = async () => {
     try {
+      console.log(bodyData);
       const response = await axios.post("http://localhost:8080/save", bodyData);
+
+      // 공유가능한 url 생성
+      // https에서 테스트 가능.
+      const copyUrl = async () => {
+        try {
+          const url = `http://localhost:5173/answer/${nanoId}`;
+          await navigator.clipboard.writeText(url);
+          // alert("링크가 복사되었습니다.");
+          console.log("링크가 복사되었습니다.");
+        }
+        catch (error) {
+          console.error(error);
+        }
+      }
+      copyUrl();
       console.log(response);
     } catch (error) {
       console.error(error);
