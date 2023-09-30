@@ -12,7 +12,7 @@ const CardBack: FC = () => {
 
   useEffect(() => {
     // console.log(apiResponse.result);
-    if (apiResponse.result === "" || apiResponse.result === undefined || apiResponse.result === null) {
+    if (apiResponse.cardId === 100) {
       const getCard = async () => {
         try {
           const response = await axios.get(
