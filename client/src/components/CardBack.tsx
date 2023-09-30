@@ -11,7 +11,6 @@ const CardBack: FC = () => {
   const { nanoId } = useParams();
 
   useEffect(() => {
-    // console.log(apiResponse.result);
     if (apiResponse.cardId === 100) {
       const getCard = async () => {
         try {
@@ -20,7 +19,6 @@ const CardBack: FC = () => {
           );
           // 카드 데이터 전부 받아오기 : test아직 안함
           const cardData = await response.data;
-          // console.log(cardData);
           setAnswer(cardData.answer);
           setName(cardData.card);
         } catch (error) {

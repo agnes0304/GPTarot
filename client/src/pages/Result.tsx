@@ -21,7 +21,6 @@ const Result: FC = () => {
           const cardData = await response.data;
           const userQ = cardData.question;
           setUserQuestion(userQ);
-
         } catch (error) {
           console.error(error);
         }
