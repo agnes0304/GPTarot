@@ -17,10 +17,10 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
       {isLoading ? (
         <Loading />
       ) : (
-        <>
+        <div className="flex flex-col items-center">
           <div className="flex flex-col items-center gap-4">
             <h1 className="text-violet-400 text-lg">" {selectedPrompt} "</h1>
-            <p className="text-gray-500 text-sm mb-4">
+            <p className="text-gray-500 text-sm mb-6">
               아래 카드 중 하나를 선택해주세요
             </p>
           </div>
@@ -32,7 +32,7 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
               setIsLoading={setIsLoading}
             />
           </div>
-        </>
+        </div>
       )}
     </div>
   );

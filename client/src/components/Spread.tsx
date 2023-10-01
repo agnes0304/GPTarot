@@ -53,7 +53,7 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
   };
 
   return (
-    <div className={`${classes.main} grid h-[50vmax] place-items-center`}>
+    <div className={`${classes.main} grid h-[50vh] place-items-center`}>
       <div
         className={`${classes.card} ${classes.c1}`}
         onClick={(e) => handleClick(e)}
