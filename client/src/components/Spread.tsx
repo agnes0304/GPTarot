@@ -21,7 +21,8 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
   // const [isLoading, setIsLoading] = useState(false);
   const { setApiResponse } = useApiResponse();
 
-  const handleClick = async (e) => {
+  // eslint-disable-next-line no-unused-vars
+  const handleClick = async (_e:unknown) => {
     setIsLoading(true);
 
     const number = Math.floor(Math.random() * 78);
