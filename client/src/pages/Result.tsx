@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import Card from "../components/Card";
 import Actions from "../components/Actions";
 import { useApiResponse } from "../context/ApiResponse";
-import axios from "axios";
+import axiosInstance from "../axios/AxiosInstance";
 import { useParams } from "react-router-dom";
 
 const Result: FC = () => {
@@ -14,7 +14,7 @@ const Result: FC = () => {
     if (apiResponse.cardId === 100) {
       const getQuestion = async () => {
         try {
-          const response = await axios.get(
+          const response = await axiosInstance.get(
             `http://localhost:8080/load/${nanoId}`
           );
           // 카드 데이터 전부 받아오기

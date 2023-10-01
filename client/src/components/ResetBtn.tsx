@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRotateRight } from "@fortawesome/free-solid-svg-icons";
-// import { faFeather } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 interface Props {

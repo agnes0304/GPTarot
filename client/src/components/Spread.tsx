@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "../styles/Spread.module.css";
 import CardsData from "../data/CardsData";
-import axios from "axios";
+import axiosInstance from "../axios/AxiosInstance";
 import { useApiResponse } from "../context/ApiResponse";
 import { nanoid } from "nanoid";
 
@@ -18,7 +18,6 @@ interface SpreadProps {
 const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
   const id = nanoid(10);
   const navigate = useNavigate();
-  // const [isLoading, setIsLoading] = useState(false);
   const { setApiResponse } = useApiResponse();
 
   // eslint-disable-next-line no-unused-vars
@@ -32,11 +31,10 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
     }
     console.log(selectedPrompt);
     try {
-      const response = await axios.post("http://localhost:8080/completions", {
+      const response = await axiosInstance.post("http://localhost:8080/completions", {
         prompt: selectedPrompt,
         card: selectedCard?.korName,
       });
-      // console.log(response.data);
       if (selectedCard) {
         setApiResponse({
           card: selectedCard?.korName,

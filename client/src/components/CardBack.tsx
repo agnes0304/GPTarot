@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import classes from "../styles/CardBack.module.css";
 import { useApiResponse } from "../context/ApiResponse";
-import axios from "axios";
+import axiosInstance from "../axios/AxiosInstance";
 import { useParams } from "react-router-dom";
 
 const CardBack: FC = () => {
@@ -14,7 +14,7 @@ const CardBack: FC = () => {
     if (apiResponse.cardId === 100) {
       const getCard = async () => {
         try {
-          const response = await axios.get(
+          const response = await axiosInstance.get(
             `http://localhost:8080/load/${nanoId}`
           );
           // 카드 데이터 전부 받아오기 : test아직 안함
