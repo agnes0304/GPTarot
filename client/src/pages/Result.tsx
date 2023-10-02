@@ -29,6 +29,8 @@ const Result: FC = () => {
         }
       };
       getQuestion();
+    } else{
+      setUserQuestion(apiResponse.prompt);
     }
   }, [apiResponse.cardId]);
 

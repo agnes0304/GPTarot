@@ -21,7 +21,6 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
   const id = nanoid(10);
   const navigate = useNavigate();
   const { setApiResponse } = useApiResponse();
-  const [ cardName, setCardName ] = useState<string>("");
 
   // eslint-disable-next-line no-unused-vars
   const handleClick = async (_e: unknown) => {
@@ -31,30 +30,53 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
     const selectedCard = CardsData.find((card) => card.id === number);
     if (selectedCard) {
       setCard(selectedCard);
-      const name =
-        language === "ko" ? selectedCard.korName : selectedCard.engName;
-      setCardName(name);
     }
-    try {
-      const response = await axiosInstance.post("/completions", {
-        prompt: selectedPrompt,
-        card: cardName,
-        targetLang: language,
-      });
-      if (selectedCard) {
-        setApiResponse({
-          card: cardName,
-          cardId: selectedCard?.id,
+
+    if (language === "ko") {
+      const card = selectedCard!.korName;
+      console.log(card);
+      try {
+        const response = await axiosInstance.post("/completions", {
           prompt: selectedPrompt,
-          result: response.data,
+          card: card,
+          targetLang: language,
         });
 
-        navigate(`/answer/${id}`);
+        if (selectedCard) {
+          setApiResponse({
+            card: card,
+            cardId: selectedCard?.id,
+            prompt: selectedPrompt,
+            result: response.data,
+          });
+          navigate(`/answer/${id}`);
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false);
+    } else {
+      try {
+        const response = await axiosInstance.post("/completions", {
+          prompt: selectedPrompt,
+          card: selectedCard?.engName,
+          targetLang: language,
+        });
+        if (selectedCard) {
+          setApiResponse({
+            card: selectedCard?.engName,
+            cardId: selectedCard?.id,
+            prompt: selectedPrompt,
+            result: response.data,
+          });
+          navigate(`/answer/${id}`);
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
