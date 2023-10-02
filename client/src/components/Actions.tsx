@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import SharerBtn from "./SharerBtn";
 import ResetBtn from "./ResetBtn";
-import { useApiResponse } from "../context/ApiResponse";
+import { useApiResponse } from "../hooks/useApiResponse";
 
 const Actions: FC = () => {
   const { apiResponse } = useApiResponse();

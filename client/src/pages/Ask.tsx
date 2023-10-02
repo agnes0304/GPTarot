@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import UserInput from "../components/UserInput";
 import CardDeck from "../components/CardDeck";
-import LangToggle from "../components/langToggle";
+import LangToggle from "../components/LangToggle";
 
 const Ask: FC = () => {
   const [prompt, setPrompt] = useState("");

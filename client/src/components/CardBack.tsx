@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import classes from "../styles/CardBack.module.css";
-import { useApiResponse } from "../context/ApiResponse";
-import axiosInstance from "../axios/AxiosInstance";
+import { useApiResponse } from "../hooks/useApiResponse";
+import axiosInstance from "../axios/axiosInstance";
 import { useParams } from "react-router-dom";
 
 const CardBack: FC = () => {

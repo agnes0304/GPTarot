@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
-import { useApiResponse } from "../context/ApiResponse";
-import axiosInstance from "../axios/AxiosInstance";
+import { useApiResponse } from "../hooks/useApiResponse";
+import axiosInstance from "../axios/axiosInstance";
 
 // db에 post하는 요청보내고 url 생성해줘야 함.
 const SharerBtn: FC = () => {

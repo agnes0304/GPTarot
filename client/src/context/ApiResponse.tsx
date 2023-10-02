@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, ReactNode, FC } from "react";
+import { createContext, useState, ReactNode, FC } from "react";
 
 interface ApiResponseData {
   card: string;
@@ -19,16 +19,6 @@ interface ApiResponseProviderProps {
 export const ApiResponseContext = createContext<ApiResponseContextProps | null>(
   null
 );
-
-export const useApiResponse = () => {
-  const context = useContext(ApiResponseContext);
-  if (!context) {
-    throw new Error(
-      "useApiResponse must be used within an ApiResponseProvider"
-    );
-  }
-  return context;
-};
 
 export const ApiResponseProvider: FC<ApiResponseProviderProps> = ({
   children,

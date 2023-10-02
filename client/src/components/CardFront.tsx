@@ -1,8 +1,8 @@
 import { FC, useRef, useEffect, useState } from "react";
-import axiosInstance from "../axios/AxiosInstance";
+import axiosInstance from "../axios/axiosInstance";
 import classes from "../styles/CardFront.module.css";
 import VanillaTilt from "vanilla-tilt";
-import { useApiResponse } from "../context/ApiResponse";
+import { useApiResponse } from "../hooks/useApiResponse";
 import { useParams } from "react-router-dom";
 
 interface HTMLDivElementWithTilt extends HTMLDivElement {

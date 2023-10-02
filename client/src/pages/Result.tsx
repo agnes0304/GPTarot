@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import Card from "../components/Card";
 import Actions from "../components/Actions";
-import { useApiResponse } from "../context/ApiResponse";
-import axiosInstance from "../axios/AxiosInstance";
+import { useApiResponse } from "../hooks/useApiResponse";
+import axiosInstance from "../axios/axiosInstance";
 import { useParams } from "react-router-dom";
 
 const Result: FC = () => {
