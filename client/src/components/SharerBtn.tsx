@@ -26,10 +26,10 @@ const SharerBtn: FC = () => {
       // https에서 테스트 가능
       const copyUrl = async () => {
         try {
-          const url = `http://localhost:5173/answer/${nanoId}`;
+          const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
           await navigator.clipboard.writeText(url);
-          // alert("링크가 복사되었습니다.");
-          console.log("링크가 복사되었습니다.");
+          alert("링크가 복사되었습니다.");
+          // console.log("링크가 복사되었습니다.");
         }
         catch (error) {
           console.error(error);
