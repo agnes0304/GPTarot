@@ -1,10 +1,11 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "../styles/Spread.module.css";
 import CardsData from "../data/CardsData";
 import { useApiResponse } from "../hooks/useApiResponse";
 import axiosInstance from "../axios/axiosInstance";
 import { nanoid } from "nanoid";
+import { useLanguage } from "../hooks/useLanguage";
 
 interface SpreadProps {
   selectedPrompt: string;
@@ -16,9 +17,11 @@ interface SpreadProps {
 }
 
 const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
+  const { language } = useLanguage();
   const id = nanoid(10);
   const navigate = useNavigate();
   const { setApiResponse } = useApiResponse();
+  const [ cardName, setCardName ] = useState<string>("");
 
   // eslint-disable-next-line no-unused-vars
   const handleClick = async (_e: unknown) => {
@@ -28,19 +31,19 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
     const selectedCard = CardsData.find((card) => card.id === number);
     if (selectedCard) {
       setCard(selectedCard);
+      const name =
+        language === "ko" ? selectedCard.korName : selectedCard.engName;
+      setCardName(name);
     }
-    console.log(selectedPrompt);
     try {
-      const response = await axiosInstance.post(
-        "/completions",
-        {
-          prompt: selectedPrompt,
-          card: selectedCard?.korName,
-        }
-      );
+      const response = await axiosInstance.post("/completions", {
+        prompt: selectedPrompt,
+        card: cardName,
+        targetLang: language,
+      });
       if (selectedCard) {
         setApiResponse({
-          card: selectedCard?.korName,
+          card: cardName,
           cardId: selectedCard?.id,
           prompt: selectedPrompt,
           result: response.data,
