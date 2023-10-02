@@ -20,7 +20,7 @@ const SharerBtn: FC = () => {
   const handleClick = async () => {
     try {
       console.log(bodyData);
-      const response = await axiosInstance.post("http://localhost:8080/save", bodyData);
+      const response = await axiosInstance.post("/save", bodyData);
 
       // 공유가능한 url 생성
       // https에서 테스트 가능

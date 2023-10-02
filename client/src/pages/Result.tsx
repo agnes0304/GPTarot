@@ -18,7 +18,7 @@ const Result: FC = () => {
       const getQuestion = async () => {
         try {
           const response = await axiosInstance.get(
-            `http://localhost:8080/load/${nanoId}`
+            `/load/${nanoId}`
           );
           // 카드 데이터 전부 받아오기
           const cardData = await response.data;

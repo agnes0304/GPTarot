@@ -32,7 +32,7 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
     console.log(selectedPrompt);
     try {
       const response = await axiosInstance.post(
-        "http://localhost:8080/completions",
+        "/completions",
         {
           prompt: selectedPrompt,
           card: selectedCard?.korName,

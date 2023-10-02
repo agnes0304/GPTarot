@@ -15,7 +15,7 @@ const CardBack: FC = () => {
       const getCard = async () => {
         try {
           const response = await axiosInstance.get(
-            `http://localhost:8080/load/${nanoId}`
+            `/load/${nanoId}`
           );
           // 카드 데이터 전부 받아오기 : test아직 안함
           const cardData = await response.data;
