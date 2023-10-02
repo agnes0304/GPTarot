@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
-import { useApiResponse } from "../context/ApiResponse";
-import axios from "axios";
+import { useApiResponse } from "../hooks/useApiResponse";
+import axiosInstance from "../axios/axiosInstance";
 
 // db에 post하는 요청보내고 url 생성해줘야 함.
 const SharerBtn: FC = () => {
@@ -20,7 +20,7 @@ const SharerBtn: FC = () => {
   const handleClick = async () => {
     try {
       console.log(bodyData);
-      const response = await axios.post("http://localhost:8080/save", bodyData);
+      const response = await axiosInstance.post("/save", bodyData);
 
       // 공유가능한 url 생성
       // https에서 테스트 가능

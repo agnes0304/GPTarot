@@ -1,6 +1,8 @@
 import { FC, useState } from "react";
 import Spread from "./Spread";
 import Loading from "./Loading";
+import { useLanguage } from "../hooks/useLanguage";
+import { InnerText } from "../data/InnerText";
 
 interface CardDeckProps {
   selectedPrompt: string;
@@ -10,6 +12,7 @@ interface CardDeckProps {
 }
 
 const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
+  const {language} = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
 
   return (
@@ -17,11 +20,11 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
       {isLoading ? (
         <Loading />
       ) : (
-        <>
+        <div className="flex flex-col items-center">
           <div className="flex flex-col items-center gap-4">
             <h1 className="text-violet-400 text-lg">" {selectedPrompt} "</h1>
-            <p className="text-gray-500 text-sm mb-4">
-              아래 카드 중 하나를 선택해주세요
+            <p className="text-gray-500 text-sm mb-6">
+              {language === "ko"? InnerText.cardDeck.ko : InnerText.cardDeck.en}
             </p>
           </div>
           <div>
@@ -32,7 +35,7 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
               setIsLoading={setIsLoading}
             />
           </div>
-        </>
+        </div>
       )}
     </div>
   );

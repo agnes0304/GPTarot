@@ -1,8 +1,8 @@
 import { FC, useRef, useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from "../axios/axiosInstance";
 import classes from "../styles/CardFront.module.css";
 import VanillaTilt from "vanilla-tilt";
-import { useApiResponse } from "../context/ApiResponse";
+import { useApiResponse } from "../hooks/useApiResponse";
 import { useParams } from "react-router-dom";
 
 interface HTMLDivElementWithTilt extends HTMLDivElement {
@@ -40,7 +40,7 @@ const CardFront: FC = () => {
     if(apiResponse.cardId === 100) {
       const getCard = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/load/${nanoId}`);
+          const response = await axiosInstance.get(`/load/${nanoId}`);
           // 카드 데이터 전부 받아오기
           const cardData = await response.data;
           const cardImageId = cardData.cardId;

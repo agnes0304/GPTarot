@@ -1,10 +1,11 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "../styles/Spread.module.css";
 import CardsData from "../data/CardsData";
-import axios from "axios";
-import { useApiResponse } from "../context/ApiResponse";
+import { useApiResponse } from "../hooks/useApiResponse";
+import axiosInstance from "../axios/axiosInstance";
 import { nanoid } from "nanoid";
+import { useLanguage } from "../hooks/useLanguage";
 
 interface SpreadProps {
   selectedPrompt: string;
@@ -16,30 +17,33 @@ interface SpreadProps {
 }
 
 const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
+  const { language } = useLanguage();
   const id = nanoid(10);
   const navigate = useNavigate();
-  // const [isLoading, setIsLoading] = useState(false);
   const { setApiResponse } = useApiResponse();
+  const [ cardName, setCardName ] = useState<string>("");
 
   // eslint-disable-next-line no-unused-vars
-  const handleClick = async (_e:unknown) => {
+  const handleClick = async (_e: unknown) => {
     setIsLoading(true);
 
     const number = Math.floor(Math.random() * 78);
     const selectedCard = CardsData.find((card) => card.id === number);
     if (selectedCard) {
       setCard(selectedCard);
+      const name =
+        language === "ko" ? selectedCard.korName : selectedCard.engName;
+      setCardName(name);
     }
-    console.log(selectedPrompt);
     try {
-      const response = await axios.post("http://localhost:8080/completions", {
+      const response = await axiosInstance.post("/completions", {
         prompt: selectedPrompt,
-        card: selectedCard?.korName,
+        card: cardName,
+        targetLang: language,
       });
-      // console.log(response.data);
       if (selectedCard) {
         setApiResponse({
-          card: selectedCard?.korName,
+          card: cardName,
           cardId: selectedCard?.id,
           prompt: selectedPrompt,
           result: response.data,
@@ -55,7 +59,7 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
   };
 
   return (
-    <div className={`${classes.main} grid h-[50vmax] place-items-center`}>
+    <div className={`${classes.main} grid h-[50vh] place-items-center`}>
       <div
         className={`${classes.card} ${classes.c1}`}
         onClick={(e) => handleClick(e)}

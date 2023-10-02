@@ -1,14 +1,16 @@
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRotateRight } from "@fortawesome/free-solid-svg-icons";
-// import { faFeather } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../hooks/useLanguage";
+import { InnerText } from "../data/InnerText";
 
 interface Props {
   isNew?: boolean;
 }
 
 const ResetBtn: FC<Props> = ({ isNew }) => {
+  const { language } = useLanguage();
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/");
@@ -25,7 +27,9 @@ const ResetBtn: FC<Props> = ({ isNew }) => {
           <span className="material-symbols-outlined w-[25px] h-[25px] cursor-pointer text-violet-400/50 hover:text-violet-400">
             playing_cards
           </span>
-          <p className="ml-[4px]">질문하러 가기</p>
+          <p className="ml-[4px]">
+            {language === "ko" ? InnerText.resetBtn.ko : InnerText.resetBtn.en}
+          </p>
         </div>
       ) : (
         <FontAwesomeIcon icon={faArrowRotateRight} />

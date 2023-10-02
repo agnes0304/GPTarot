@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import UserInput from "../components/UserInput";
 import CardDeck from "../components/CardDeck";
+import LangToggle from "../components/LangToggle";
 
 const Ask: FC = () => {
   const [prompt, setPrompt] = useState("");
@@ -22,11 +23,14 @@ const Ask: FC = () => {
   return (
     <>
       {!showCardDeck && (
-        <UserInput
-          prompt={prompt}
-          setPrompt={setPrompt}
-          handleEnter={handleEnter}
-        />
+        <>
+          <LangToggle />
+          <UserInput
+            prompt={prompt}
+            setPrompt={setPrompt}
+            handleEnter={handleEnter}
+          />
+        </>
       )}
       {showCardDeck && <CardDeck selectedPrompt={prompt} setCard={setCard} />}
       {/* 뒤로가기 버튼이 있어야 할 듯 */}
