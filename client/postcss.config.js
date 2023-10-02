@@ -1,4 +1,7 @@
-// eslint-disable-next-line no-undef
-module.exports = {
-  plugins: ["tailwindcss", "autoprefixer", "postcss-100vh-fix"],
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+    "postcss-100vh-fix": {},
+  },
 };
