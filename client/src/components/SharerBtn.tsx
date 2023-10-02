@@ -42,7 +42,7 @@ const SharerBtn: FC = () => {
   };
 
   return (
-    <button className="flex justify-center items-center w-[40px] h-[40px] p-4 rounded-[50%] cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400" type="button" onClick={handleClick}>
+    <button className="flex justify-center items-center w-[40px] h-[40px] p-3 rounded-full cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400 hover:bg-violet-500/50" type="button" onClick={handleClick}>
       <FontAwesomeIcon icon={faArrowUpFromBracket} />
     </button>
   );

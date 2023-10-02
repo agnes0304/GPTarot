@@ -20,14 +20,18 @@ const SampleQ: FC<SampleQProps> = ({ setPrompt, handleEnter }) => {
   return (
     <>
       <h1 className="text-gray-300 text-center font-thin text-[0.8rem] my-4">
-        {language === "ko" ? InnerText.sampleQ.ko : InnerText.sampleQ.en}
+        {language === "ko" ? (
+          InnerText.sampleQ.ko
+        ) : (
+          <>{InnerText.sampleQ.en.first}{<br />}{InnerText.sampleQ.en.second}</>
+        )}
       </h1>
       <ul className="flex flex-col items-center">
         {SampleQData.map((data) => {
           return (
             <li
               key={data.id}
-              className="cursor-pointer text-gray-500 hover:text-violet-400"
+              className="cursor-pointer text-gray-500 hover:text-violet-400 w-[92%] m-auto text-center"
               onClick={(e) => sampleClickHandler(e)}
             >
               {language === "ko" ? data.questionKo : data.questionEn}
