@@ -3,6 +3,8 @@ import classes from "../styles/UserInput.module.css";
 import SampleQ from "./SampleQ";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useLanguage } from "../hooks/useLanguage";
+import { InnerText } from "../data/InnerText";
 
 interface UserInputProps {
   prompt: string;
@@ -11,6 +13,7 @@ interface UserInputProps {
 }
 
 const UserInput: FC<UserInputProps> = ({ setPrompt, prompt, handleEnter }) => {
+  const { language } = useLanguage();
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPrompt(event.target.value);
   };
@@ -21,13 +24,13 @@ const UserInput: FC<UserInputProps> = ({ setPrompt, prompt, handleEnter }) => {
 
   return (
     <>
-      <form className="relative" onSubmit={e => handleEnter(e)}>
+      <form className="relative" onSubmit={(e) => handleEnter(e)}>
         <input
           className={`${classes.userInput} rounded-xl p-4 w-full bg-transparent text-gray-400`}
           required
           type="text"
           value={prompt}
-          onChange={(e)=>handleChange(e)}
+          onChange={(e) => handleChange(e)}
         />
         <button
           className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#121212] border-none cursor-pointer text-sm text-gray-400"
@@ -36,7 +39,9 @@ const UserInput: FC<UserInputProps> = ({ setPrompt, prompt, handleEnter }) => {
         >
           <FontAwesomeIcon icon={faXmark} />
         </button>
-        <label className={classes.userInputLabel}>무엇이 궁금하신가요?</label>
+        <label className={classes.userInputLabel}>
+          {language === "ko" ? InnerText.userInput.ko : InnerText.userInput.en}
+        </label>
       </form>
       <SampleQ setPrompt={setPrompt} handleEnter={handleEnter} />
     </>
