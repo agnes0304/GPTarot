@@ -8,7 +8,7 @@ const Actions: FC = () => {
   const [isNew, setIsNew] = useState<boolean>(false);
 
   useEffect(() => {
-    if (apiResponse.cardId === null) {
+    if (apiResponse.cardId === 100) {
       setIsNew(true);
     } else {
       setIsNew(false);
