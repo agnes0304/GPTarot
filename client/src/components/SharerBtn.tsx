@@ -19,7 +19,6 @@ const SharerBtn: FC = () => {
 
   const handleClick = async () => {
     try {
-      console.log(bodyData);
       const response = await axiosInstance.post("/save", bodyData);
 
       // 공유가능한 url 생성

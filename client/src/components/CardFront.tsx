@@ -44,7 +44,7 @@ const CardFront: FC = () => {
           // 카드 데이터 전부 받아오기
           const cardData = await response.data;
           const cardImageId = cardData.cardId;
-          const path = `/src/assets/cards/${cardImageId}.webp`;
+          const path = `/${cardImageId}.webp`;
           setcardImagePath(path);
         } catch (error) {
           console.error(error);
@@ -54,7 +54,7 @@ const CardFront: FC = () => {
     }
     else {
       const cardImageId = apiResponse.cardId;
-      const path = `/src/assets/cards/${cardImageId}.webp`;
+      const path = `/${cardImageId}.webp`;
       setcardImagePath(path);
     }
   }, [apiResponse.cardId]);
