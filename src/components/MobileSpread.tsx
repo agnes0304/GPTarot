@@ -32,7 +32,7 @@ const MobileSpread: FC<MobileSpreadProps> = ({ handleClick }) => {
             hoverCard === index ? "-translate-y-5" : ""
           } relative`}
           style={{
-            marginLeft: index !== 0 ? "-140px" : "0",
+            marginLeft: index !== 0 ? "-160px" : "0",
             zIndex: cards.length - index,
           }}
         >
