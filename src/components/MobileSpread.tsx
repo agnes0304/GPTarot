@@ -18,7 +18,7 @@ const MobileSpread: FC<MobileSpreadProps> = ({ handleClick }) => {
   };
 
   return (
-    <div className="flex justify-center items-center overflow-x-auto w-[92%] pt-[40px] ml-2">
+    <div className="flex justify-center items-center overflow-x-auto w-[92%] pt-[40px] ml-[10px]">
       {cards.map((_, index) => (
         <div
           key={index}
