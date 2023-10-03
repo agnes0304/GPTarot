@@ -24,7 +24,10 @@ const UserInput: FC<UserInputProps> = ({ setPrompt, prompt, handleEnter }) => {
 
   return (
     <>
-      <form className="relative" onSubmit={(e) => handleEnter(e)}>
+      <form
+        className="relative w-[92%] m-auto"
+        onSubmit={(e) => handleEnter(e)}
+      >
         <input
           className={`${classes.userInput} rounded-xl p-4 w-full bg-transparent text-gray-400`}
           required
