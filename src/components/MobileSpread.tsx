@@ -7,30 +7,30 @@ interface MobileSpreadProps {
 }
 
 const MobileSpread: FC<MobileSpreadProps> = ({ handleClick }) => {
-  const [hoverCard, setHoverCard] = useState<boolean>(false);
+  const [hoverCard, sethoverCard] = useState<number | null>(null);
   const cards = Array(5).fill(null);
 
-  const handleHoverStart = () => {
-    setHoverCard(true);
+  const handleHoverStart = (index: number) => {
+    sethoverCard(index);
   };
   const handleHoverEnd = () => {
-    setHoverCard(false);
+    sethoverCard(null);
   };
 
   return (
-    <div 
-      className={`flex justify-center items-center overflow-x-auto w-[92%] pt-[40px] ml-[10px] transform transition-all ease-in-out duration-300 ${hoverCard ? "-translate-y-5" : ""}`}
-      onMouseEnter={handleHoverStart}
-      onMouseLeave={handleHoverEnd}
-      onTouchStart={handleHoverStart}
-      onTouchEnd={handleHoverEnd}
-    >
+    <div className="flex justify-center items-center overflow-x-auto w-[92%] pt-[40px] ml-[10px]">
       {cards.map((_, index) => (
         <div
           key={index}
           id={`card${index + 1}`}
           onClick={(e) => handleClick(e)}
-          className={`${classes.card} w-[200px] h-[356px] cursor-pointer flex items-center justify-center relative`}
+          onTouchStart={() => handleHoverStart(index)}
+          onTouchEnd={handleHoverEnd}
+          className={`${
+            classes.card
+          } w-[200px] h-[356px] cursor-pointer flex items-center justify-center transform transition-all ease-in-out duration-300 ${
+            hoverCard === index ? "-translate-y-5" : ""
+          } relative`}
           style={{
             marginLeft: index !== 0 ? "-160px" : "0",
             zIndex: cards.length - index,
