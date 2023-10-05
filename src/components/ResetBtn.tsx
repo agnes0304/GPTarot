@@ -19,7 +19,7 @@ const ResetBtn: FC<Props> = ({ isNew }) => {
   return (
     <>
       {isNew ? (
-        <div className="flex w-full cursor-pointer text-violet-400/50 hover:text-violet-400" onClick={handleClick}>
+        <div className="flex w-full cursor-pointer text-violet-400/50 hover:text-violet-400 hover:bg-violet-500/50 rounded-xl" onClick={handleClick}>
           <span className="material-symbols-outlined w-[25px] h-[25px]">
             playing_cards
           </span>
