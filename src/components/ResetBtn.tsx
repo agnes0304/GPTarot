@@ -17,13 +17,9 @@ const ResetBtn: FC<Props> = ({ isNew }) => {
   };
 
   return (
-    <button
-      className="flex justify-center items-center w-[40px] h-[40px] p-3 cursor-pointer text-violet-400/50 rounded-full hover:text-violet-400 hover:border-violet-400 hover:bg-violet-500/50"
-      type="button"
-      onClick={handleClick}
-    >
+    <>
       {isNew ? (
-        <div className="flex w-full">
+        <div className="flex w-full" onClick={handleClick}>
           <span className="material-symbols-outlined w-[25px] h-[25px] cursor-pointer text-violet-400/50 hover:text-violet-400">
             playing_cards
           </span>
@@ -32,9 +28,15 @@ const ResetBtn: FC<Props> = ({ isNew }) => {
           </p>
         </div>
       ) : (
-        <FontAwesomeIcon icon={faArrowRotateRight} />
+        <button
+          className="flex justify-center items-center w-[40px] h-[40px] p-3 cursor-pointer text-violet-400/50 rounded-full hover:text-violet-400 hover:border-violet-400 hover:bg-violet-500/50"
+          type="button"
+          onClick={handleClick}
+        >
+          <FontAwesomeIcon icon={faArrowRotateRight} />
+        </button>
       )}
-    </button>
+    </>
   );
 };
 
