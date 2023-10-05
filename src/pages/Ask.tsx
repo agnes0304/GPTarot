@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import UserInput from "../components/UserInput";
 import CardDeck from "../components/CardDeck";
 import LangToggle from "../components/LangToggle";
+import TiltCard from "../components/TiltCard";
 
 const Ask: FC = () => {
   const [prompt, setPrompt] = useState("");
@@ -22,6 +23,7 @@ const Ask: FC = () => {
 
   return (
     <>
+    <TiltCard />
       {!showCardDeck && (
         <>
           <LangToggle />
