@@ -19,11 +19,11 @@ const ResetBtn: FC<Props> = ({ isNew }) => {
   return (
     <>
       {isNew ? (
-        <div className="flex w-full cursor-pointer" onClick={handleClick}>
-          <span className="material-symbols-outlined w-[25px] h-[25px] text-violet-400/50 hover:text-violet-400">
+        <div className="flex w-full cursor-pointer text-violet-400/50 hover:text-violet-400" onClick={handleClick}>
+          <span className="material-symbols-outlined w-[25px] h-[25px]">
             playing_cards
           </span>
-          <p className="ml-[4px] text-violet-400/50 hover:text-violet-400">
+          <p className="ml-[4px]">
             {language === "ko" ? InnerText.resetBtn.ko : InnerText.resetBtn.en}
           </p>
         </div>
