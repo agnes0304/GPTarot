@@ -22,7 +22,7 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
       ) : (
         <div className="flex flex-col items-center">
           <div className="flex flex-col items-center gap-4">
-            <h1 className="text-violet-400 text-lg">" {selectedPrompt} "</h1>
+            <h1 className="text-violet-400 text-lg text-center w-[90%]">"{selectedPrompt}"</h1>
             <p className="text-gray-500 text-sm mb-6">
               {language === "ko"? InnerText.cardDeck.ko : InnerText.cardDeck.en}
             </p>
