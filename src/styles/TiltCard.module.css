@@ -7,6 +7,10 @@
   transition: all 0.5s linear;
   border-radius: 10px;
   border: 0px solid transparent;
+  background: linear-gradient(217deg, #6287a3, rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, #803050, rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(60deg, rgba(0, 255, 0, 0), #f0b1a0 70.71%),
+    linear-gradient(336deg, #f0b1a0, rgba(0, 0, 255, 0) 70.71%);
 }
 
 .card:hover {
