@@ -4,7 +4,7 @@
   width: 250px;
   height: 400px;
   opacity: 0.8;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   border-radius: 10px;
   border: 0px solid transparent;
   background: linear-gradient(217deg, #6287a3, rgba(255, 0, 0, 0) 70.71%),
