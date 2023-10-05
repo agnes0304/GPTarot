@@ -37,7 +37,7 @@ const Result: FC = () => {
   return (
     <div className="flex flex-col items-center">
       {userQuestion && (
-        <h1 className="text-violet-400 text-lg">" {userQuestion} "</h1>
+        <h1 className="text-violet-400 text-lg text-center w-[90%]">"{userQuestion}"</h1>
       )}
       <p className="text-gray-400 text-[0.8rem] mb-6">
         {language === "ko" ? InnerText.result.ko : InnerText.result.en}
