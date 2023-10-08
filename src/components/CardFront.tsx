@@ -69,6 +69,7 @@
 // export default CardFront;
 
 // For mobile
+// TODO: cardFront tailwind css 아직 안옮김
 import { FC, useRef, useEffect, useState } from "react";
 import axiosInstance from "../axios/axiosInstance";
 import { useApiResponse } from "../hooks/useApiResponse";
@@ -134,6 +135,7 @@ const CardFront: FC = () => {
   }, [apiResponse.cardId]);
 
   return (
+    // <div className={`${classes.cardFront} absolute w-full h-full bg-[#231F50] text-white flex items-center justify-center rounded-[10px] border-[10px] border-[#231f50] shadow-lg shadow-violet-400/30`} ref={cardRef}></div>
     <div
       ref={cardRef}
       className={classes.card}

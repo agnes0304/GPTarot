@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import classes from "../styles/TiltCard.module.css";
 
-const CardComponent: React.FC = () => {
+const TiltCard: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleEvent = (pageX: number, pageY: number) => {
@@ -48,4 +48,4 @@ const CardComponent: React.FC = () => {
   );
 };
 
-export default CardComponent;
+export default TiltCard;
