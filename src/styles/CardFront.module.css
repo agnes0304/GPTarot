@@ -1,42 +1,4 @@
-/* .cardFront {
+.cardFront {
   backface-visibility: hidden;
   transform: rotateY(0deg);
-} */
-
-
-.card {
-  position: relative;
-  transform-style: preserve-3d;
-  width: 250px;
-  height: 400px;
-  opacity: 0.8;
-  transition: all 0.3s linear;
-  border-radius: 10px;
-  border: 0px solid transparent;
-  background: linear-gradient(217deg, #6287a3, rgba(255, 0, 0, 0) 70.71%),
-    linear-gradient(127deg, #803050, rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(60deg, rgba(0, 255, 0, 0), #f0b1a0 70.71%),
-    linear-gradient(336deg, #f0b1a0, rgba(0, 0, 255, 0) 70.71%);
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-touch-callout: none;
-  touch-action: manipulation;
-  backface-visibility: hidden;
-  transform: rotateY(0deg);
-}
-
-
-.card:hover {
-  opacity: 1;
-  box-shadow: 0 0 0 1px rgb(255, 255, 255),
-    0px 0px 40px rgb(200, 200, 200);
-  transform: rotateX(0deg) rotateY(30deg);
-}
-
-.innerCard {
-  position: absolute;
-  width: 95%;
-  height: 97%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
