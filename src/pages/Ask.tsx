@@ -33,7 +33,6 @@ const Ask: FC = () => {
         </>
       )}
       {showCardDeck && <CardDeck selectedPrompt={prompt} setCard={setCard} />}
-      {/* 뒤로가기 버튼이 있어야 할 듯 */}
     </>
   );
 };
