@@ -17,7 +17,6 @@ const CardFront: FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [cardImagePath, setcardImagePath] = useState("");
 
-
   useEffect(() => {
     if (cardRef.current) {
       VanillaTilt.init(cardRef.current, {
@@ -35,14 +34,11 @@ const CardFront: FC = () => {
     };
   }, []);
 
-  // 카드 이미지 id값으로 가지고 오기. assets/cards 이름이랑 동일한 넘버.
-  // apiResponse.cardId가 null이면 get요청 보내기.
   useEffect(() => {
     if(apiResponse.cardId === 100) {
       const getCard = async () => {
         try {
           const response = await axiosInstance.get(`/load/${nanoId}`);
-          // 카드 데이터 전부 받아오기
           const cardData = await response.data;
           const cardImageId = cardData.cardId;
           const path = `/${cardImageId}.webp`;
@@ -61,8 +57,8 @@ const CardFront: FC = () => {
   }, [apiResponse.cardId]);
 
   return (
-    <div className={`${classes.cardFront} absolute w-full h-full bg-[#231F50] text-white flex items-center justify-center rounded-[10px] border-[10px] border-[#231f50] shadow-lg shadow-violet-400/30`} ref={cardRef}>
-      <img src={cardImagePath} alt={apiResponse.card} />
+    <div className={`${classes.cardFront} absolute w-full h-full bg-[#231F50] text-white flex items-center justify-center rounded-[10px]`} ref={cardRef}>
+      <img className="w-full h-full object-cover object-center rounded-[6px]" src={cardImagePath} alt={apiResponse.card} />
     </div>
   );
 };

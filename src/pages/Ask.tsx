@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import UserInput from "../components/UserInput";
 import CardDeck from "../components/CardDeck";
 import LangToggle from "../components/LangToggle";
-import TiltCard from "../components/TiltCard";
 
 const Ask: FC = () => {
   const [prompt, setPrompt] = useState("");
@@ -23,7 +22,6 @@ const Ask: FC = () => {
 
   return (
     <>
-    <TiltCard />
       {!showCardDeck && (
         <>
           <LangToggle />
@@ -35,7 +33,6 @@ const Ask: FC = () => {
         </>
       )}
       {showCardDeck && <CardDeck selectedPrompt={prompt} setCard={setCard} />}
-      {/* 뒤로가기 버튼이 있어야 할 듯 */}
     </>
   );
 };

@@ -12,7 +12,7 @@ const Card: FC = () => {
   return (
     <div className="grid place-items-center">
       <div
-        className={`${classes.card} ${isFlipped ? `${classes.flipped}` : ""}`}
+        className={`${classes.card} w-[200px] h-[345px] ${isFlipped ? `${classes.flipped}` : ""}`}
         onClick={flipHandler}
       >
         <div className={`${classes.cardInner} w-full h-full relative`}>
