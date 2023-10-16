@@ -4,6 +4,7 @@ import { LanguageProvider } from "./context/LangSetting";
 import Ask from "./pages/Ask";
 import Result from "./pages/Result";
 import Error from "./pages/Error";
+import DragSpread from "./components/DragSpread";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
             <Route path="/" element={<Ask />} />
             <Route path="/answer/:nanoId" element={<Result />} />
             <Route path="*" element={<Error />} />
-            <Route path="/test" element={<Error />} />
+            <Route path="/test" element={<DragSpread />} />
           </Routes>
         </BrowserRouter>
       </ApiResponseProvider>
