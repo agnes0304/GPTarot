@@ -51,11 +51,11 @@ dd {
   margin: 0;
 }
 
-/* 일단 넣음 */
+/* 모바일 스프레드(DragSpread) 위치 문제로 각 컴포넌트 개별 적용함 */
 body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
+  /* display: grid; */
+  /* place-items: center; */
+  /* height: 100vh; */
   background-color: #121212;
 }
 /* Remove list styles on ul, ol elements */

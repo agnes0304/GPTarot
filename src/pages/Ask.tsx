@@ -24,18 +24,20 @@ const Ask: FC = () => {
   useEffect(() => {
     setOpacity(1);
   }, []);
-  
+
   return (
     <div style={{ transition: "opacity 1s ease", opacity: opacity }}>
       {!showCardDeck && (
-        <>
-          <LangToggle />
-          <UserInput
-            prompt={prompt}
-            setPrompt={setPrompt}
-            handleEnter={handleEnter}
-          />
-        </>
+        <div className="grid place-items-center h-[100vh]">
+          <div>
+            <LangToggle />
+            <UserInput
+              prompt={prompt}
+              setPrompt={setPrompt}
+              handleEnter={handleEnter}
+            />
+          </div>
+        </div>
       )}
       {showCardDeck && <CardDeck selectedPrompt={prompt} setCard={setCard} />}
     </div>
