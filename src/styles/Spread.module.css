@@ -1,6 +1,6 @@
 .card {
   width: 200px;
-  height: 356px;
+  height: 345px;
   background: rgba(211, 211, 211, 0.199);
   position: absolute;
   transition: 0.3s ease-in-out;
@@ -10,28 +10,43 @@
 }
 
 .c5 {
+  background-color: white;
+  background-size: auto 95%;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-image: url("../assets/cardBack.webp");
-  background-size: cover;
 }
 
 .c1 {
+  background-color: white;
+  background-size: auto 95%;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-image: url("../assets/cardBack.webp");
-  background-size: cover;
 }
 
 .c2 {
+  background-color: white;
+  background-size: auto 95%;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-image: url("../assets/cardBack.webp");
-  background-size: cover;
 }
 
 .c3 {
+  background-color: white;
+  background-size: auto 95%;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-image: url("../assets/cardBack.webp");
-  background-size: cover;
 }
 
 .c4 {
+  background-color: white;
+  background-size: auto 95%;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-image: url("../assets/cardBack.webp");
-  background-size: cover;
 }
 
 .main:hover .c1 {

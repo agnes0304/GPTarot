@@ -6,7 +6,8 @@ import { useApiResponse } from "../hooks/useApiResponse";
 import axiosInstance from "../axios/axiosInstance";
 import { nanoid } from "nanoid";
 import { useLanguage } from "../hooks/useLanguage";
-import MobileSpread from "./MobileSpread";
+// import MobileSpread from "./MobileSpread";
+import DragSpread from "./DragSpread";
 
 interface SpreadProps {
   selectedPrompt: string;
@@ -92,34 +93,38 @@ const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
   };
 
   return (
-    <div className="m-auto">
+    <>
       {isMobile ? (
-        <MobileSpread handleClick={handleClick} />
+        <div className="mt-[200px]">
+          <DragSpread handleClick={handleClick} />
+        </div>
       ) : (
-        <div className={`${classes.main} grid h-[50vh] place-items-center`}>
-          <div
-            className={`${classes.card} ${classes.c1}`}
-            onClick={(e) => handleClick(e)}
-          ></div>
-          <div
-            className={`${classes.card} ${classes.c2}`}
-            onClick={(e) => handleClick(e)}
-          ></div>
-          <div
-            className={`${classes.card} ${classes.c3}`}
-            onClick={(e) => handleClick(e)}
-          ></div>
-          <div
-            className={`${classes.card} ${classes.c4}`}
-            onClick={(e) => handleClick(e)}
-          ></div>
-          <div
-            className={`${classes.card} ${classes.c5}`}
-            onClick={(e) => handleClick(e)}
-          ></div>
+        <div className="m-auto">
+          <div className={`${classes.main} grid h-[50vh] place-items-center`}>
+            <div
+              className={`${classes.card} ${classes.c1}`}
+              onClick={(e) => handleClick(e)}
+            ></div>
+            <div
+              className={`${classes.card} ${classes.c2}`}
+              onClick={(e) => handleClick(e)}
+            ></div>
+            <div
+              className={`${classes.card} ${classes.c3}`}
+              onClick={(e) => handleClick(e)}
+            ></div>
+            <div
+              className={`${classes.card} ${classes.c4}`}
+              onClick={(e) => handleClick(e)}
+            ></div>
+            <div
+              className={`${classes.card} ${classes.c5}`}
+              onClick={(e) => handleClick(e)}
+            ></div>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
