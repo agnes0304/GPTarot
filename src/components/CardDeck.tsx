@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import Spread from "./Spread";
 import Loading from "./Loading";
 import { useLanguage } from "../hooks/useLanguage";
@@ -12,19 +12,47 @@ interface CardDeckProps {
 }
 
 const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
-  const {language} = useLanguage();
+  const { language } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    setOpacity(1);
+  }, []);
+
+  useEffect(() => {
+    if (isLoading) {
+      setFadeIn(true);
+    }
+  }, [isLoading]);
+
+  const fadeInStyle: React.CSSProperties = fadeIn
+    ? { opacity: 1, visibility: "visible", transition: "opacity 0.5s linear" }
+    : {
+        opacity: 0,
+        visibility: "hidden",
+        transition: "visibility 0s 0.5s, opacity 0.5s linear",
+      };
 
   return (
     <div>
-      {isLoading ? (
+      <div style={fadeInStyle}>
         <Loading />
-      ) : (
-        <div className="flex flex-col items-center">
+      </div>
+      {!isLoading && (
+        <div
+          className="flex flex-col items-center"
+          style={{ transition: "opacity 1s ease", opacity: opacity }}
+        >
           <div className="flex flex-col items-center gap-4">
-            <h1 className="text-violet-400 text-lg text-center w-[90%]">"{selectedPrompt}"</h1>
+            <h1 className="text-violet-400 text-lg text-center w-[90%]">
+              "{selectedPrompt}"
+            </h1>
             <p className="text-gray-500 text-sm mb-6">
-              {language === "ko"? InnerText.cardDeck.ko : InnerText.cardDeck.en}
+              {language === "ko"
+                ? InnerText.cardDeck.ko
+                : InnerText.cardDeck.en}
             </p>
           </div>
           <div>
