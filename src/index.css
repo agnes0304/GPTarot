@@ -96,7 +96,7 @@ textarea {
 /* Remove background and border from buttons */
 button {
   background-color: transparent;
-  border: none;
+  /* border: none; */
   padding: 0;
 }
 
