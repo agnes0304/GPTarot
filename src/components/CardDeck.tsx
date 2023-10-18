@@ -12,10 +12,20 @@ interface CardDeckProps {
 }
 
 const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const { language } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
   const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     setOpacity(1);
@@ -47,17 +57,26 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
               <h1 className="text-violet-400 text-lg text-center w-[90%]">
                 "{selectedPrompt}"
               </h1>
-              <p className="text-gray-500 text-sm mb-6">
-                {language === "ko"
-                  ? InnerText.cardDeck.ko
-                  : InnerText.cardDeck.en}
-              </p>
+              {isMobile ? (
+                <p className="text-gray-500 text-sm mb-6 text-center">
+                  {language === "ko"
+                    ? InnerText.mobileDeck.ko
+                    : InnerText.mobileDeck.en}
+                </p>
+              ) : (
+                <p className="text-gray-500 text-sm mb-6">
+                  {language === "ko"
+                    ? InnerText.cardDeck.ko
+                    : InnerText.cardDeck.en}
+                </p>
+              )}
             </div>
             <div>
               <Spread
                 selectedPrompt={selectedPrompt}
                 setCard={setCard}
                 isLoading={isLoading}
+                isMobile={isMobile}
                 setIsLoading={setIsLoading}
               />
             </div>

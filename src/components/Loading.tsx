@@ -17,18 +17,24 @@ const Loading: FC = () => {
 
   return (
     <div className="flex justify-center items-center flex-col gap-1">
-      {showSecond ? (
-        <>
+      {language === "ko" ? (
+        showSecond ? (
+          <>
+            <h1 className={`${classes.text} text-violet-400`}>
+              {InnerText.translate.first}
+            </h1>
+            <p className={`${classes.text} text-violet-400 text-sm`}>
+              {InnerText.translate.second}
+            </p>
+          </>
+        ) : (
           <h1 className={`${classes.text} text-violet-400`}>
-            {language === "ko" && InnerText.translate.first}
+            {InnerText.loading.ko}
           </h1>
-          <p className={`${classes.text} text-violet-400 text-sm`}>
-            {language === "ko" && InnerText.translate.second}
-          </p>
-        </>
+        )
       ) : (
         <h1 className={`${classes.text} text-violet-400`}>
-          {language === "ko" ? InnerText.loading.ko : InnerText.loading.en}
+          {InnerText.loading.en}
         </h1>
       )}
       <div className={`${classes.load} mt-4`}>

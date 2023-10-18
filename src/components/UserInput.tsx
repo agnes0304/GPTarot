@@ -25,7 +25,7 @@ const UserInput: FC<UserInputProps> = ({ setPrompt, prompt, handleEnter }) => {
   return (
     <>
       <form
-        className="relative w-[92%] m-auto"
+        className="relative md:w-[60%] w-[95vw] m-auto"
         onSubmit={(e) => handleEnter(e)}
       >
         <input

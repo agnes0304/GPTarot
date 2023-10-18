@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "../styles/Spread.module.css";
 import CardsData from "../data/CardsData";
@@ -15,24 +15,15 @@ interface SpreadProps {
     React.SetStateAction<{ korName: string; engName: string; id: number }>
   >;
   isLoading: boolean;
+  isMobile: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading }) => {
-  const [isMobile, setIsMobile] = useState(false);
+const Spread: FC<SpreadProps> = ({ selectedPrompt, setCard, setIsLoading, isMobile }) => {
   const { language } = useLanguage();
   const id = nanoid(10);
   const navigate = useNavigate();
   const { setApiResponse } = useApiResponse();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // eslint-disable-next-line no-unused-vars
   const handleClick = async (_e: unknown) => {

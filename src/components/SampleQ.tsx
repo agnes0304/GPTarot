@@ -31,7 +31,7 @@ const SampleQ: FC<SampleQProps> = ({ setPrompt, handleEnter }) => {
           return (
             <li
               key={data.id}
-              className="cursor-pointer text-gray-500 hover:text-violet-400 w-[92%] m-auto text-center"
+              className="cursor-pointer text-gray-500 hover:text-violet-400 w-[95vw] m-auto text-center"
               onClick={(e) => sampleClickHandler(e)}
             >
               {language === "ko" ? data.questionKo : data.questionEn}
