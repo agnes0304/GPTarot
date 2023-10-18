@@ -16,7 +16,7 @@ const LangToggle: FC = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="w-[100vw] md:w-[60%]">
+      <div className="w-[100vw] md:w-[65%]">
         <div className={classes.switch}>
           <input
             id="languageToggle"
