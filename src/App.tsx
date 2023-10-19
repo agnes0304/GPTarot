@@ -1,8 +1,9 @@
-import Ask from "./pages/Ask";
 import { ApiResponseProvider } from "./context/ApiResponse";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Result from "./pages/Result";
 import { LanguageProvider } from "./context/LangSetting";
+import Ask from "./pages/Ask";
+import Result from "./pages/Result";
+import Error from "./pages/Error";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Ask />} />
             <Route path="/answer/:nanoId" element={<Result />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </BrowserRouter>
       </ApiResponseProvider>

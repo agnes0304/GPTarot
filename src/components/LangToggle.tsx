@@ -15,18 +15,20 @@ const LangToggle: FC = () => {
   };
 
   return (
-    <div>
-      <div className={classes.switch}>
-        <input
-          id="languageToggle"
-          className={`${classes.checkToggle} ${classes.checkToggleRoundFlat}`}
-          type="checkbox"
-          onChange={handleToggle}
-          checked={language === "ko"}
-        />
-        <label htmlFor="languageToggle"></label>
-        <span className={classes.on}>ENG</span>
-        <span className={classes.off}>한글</span>
+    <div className="flex justify-center">
+      <div className="w-[100vw] md:w-[65%]">
+        <div className={classes.switch}>
+          <input
+            id="languageToggle"
+            className={`${classes.checkToggle} ${classes.checkToggleRoundFlat}`}
+            type="checkbox"
+            onChange={handleToggle}
+            checked={language === "ko"}
+          />
+          <label htmlFor="languageToggle"></label>
+          <span className={classes.on}>ENG</span>
+          <span className={classes.off}>한글</span>
+        </div>
       </div>
     </div>
   );
