@@ -22,11 +22,16 @@ const SharerBtn: FC = () => {
     const textarea = document.createElement("textarea");
     textarea.textContent = url;
     document.body.appendChild(textarea);
+    textarea.focus();
     textarea.select();
 
     try {
-      document.execCommand("copy");
-      alert("링크가 복사되었습니다.");
+      const successful = document.execCommand("copy");
+      if (successful) {
+        alert(`링크가 복사되었습니다. ${url}`);
+      } else {
+        console.error("Copy command was unsuccessful");
+      }
     } catch (err) {
       console.error("Fallback copy method failed", err);
     }
@@ -50,15 +55,6 @@ const SharerBtn: FC = () => {
       // Using fallback in case of an error with Clipboard API
       copyToClipboardFallback(url);
     }
-    // try {
-    //   // copy
-    //   await navigator.clipboard.writeText(url);
-    //   console.log("복사에 성공했습니다!");
-    //   alert("링크가 복사되었습니다!");
-    // } catch (err) {
-    //   alert(`링크 복사에 실패했습니다. ${err}`);
-    //   console.error("복사에 실패했습니다", err);
-    // }
   };
 
   // TODO: 트위터 공유하기
