@@ -67,23 +67,24 @@ const SharerBtn: FC = () => {
   };
 
   // TODO: 카카오톡 공유하기
-  // const kakaoShare = () => {
-  //   const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
-  //   // @ts-ignore
-  //   Kakao.Link.createDefaultButton({
-  //     container: "#btnKakao", // 카카오공유버튼ID
-  //     objectType: "feed",
-  //     content: {
-  //       title: "GPTarot | 지피타로",
-  //       description: "지피티가 읽어주는 타로점",
-  //       imageUrl: `https://gptarot.jiwoo.best/${bodyData.cardId}.webp`,
-  //       link: {
-  //         mobileWebUrl: url,
-  //         webUrl: url,
-  //       },
-  //     },
-  //   });
-  // };
+  const kakaoShare = () => {
+    alert("준비중입니다. 링크 복사를 이용해주세요.");
+    // const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
+    // // @ts-ignore
+    // Kakao.Link.createDefaultButton({
+    //   container: "#btnKakao", // 카카오공유버튼ID
+    //   objectType: "feed",
+    //   content: {
+    //     title: "GPTarot | 지피타로",
+    //     description: "지피티가 읽어주는 타로점",
+    //     imageUrl: `https://gptarot.jiwoo.best/${bodyData.cardId}.webp`,
+    //     link: {
+    //       mobileWebUrl: url,
+    //       webUrl: url,
+    //     },
+    //   },
+    // });
+  };
 
   // function shareKakao() {
 
@@ -136,10 +137,10 @@ const SharerBtn: FC = () => {
       <button
         className="flex justify-center items-center w-[40px] h-[40px] p-2 rounded-full cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400 hover:bg-violet-500/50"
         type="button"
-        // onClick={kakaoShare}
+        onClick={kakaoShare}
       >
         {/* <img src={kakaoLogo} alt="kakao" /> */}
-        <img src={kakaoCircle} alt="카톡공유하기" className="opacity-60 -z-10" />
+        <img src={kakaoCircle} alt="카톡공유하기" className="opacity-50 -z-10" />
       </button>
     </>
   );
