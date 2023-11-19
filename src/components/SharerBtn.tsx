@@ -5,7 +5,6 @@ import { FC } from "react";
 import { useParams } from "react-router-dom";
 import { useApiResponse } from "../hooks/useApiResponse";
 import axiosInstance from "../axios/axiosInstance";
-import kakaoLogo from "../assets/kakao.png";
 import kakaoCircle from "../assets/kakaoCircle.png";
 
 // db에 post하는 요청보내고 url 생성해줘야 함.
