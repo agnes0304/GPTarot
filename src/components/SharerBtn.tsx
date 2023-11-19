@@ -86,27 +86,6 @@ const SharerBtn: FC = () => {
     // });
   };
 
-  // function shareKakao() {
-
-  //   // 사용할 앱의 JavaScript 키 설정
-  //   Kakao.init('카카오에서_발급받은_API키');
-
-  //   // 카카오링크 버튼 생성
-  //   Kakao.Link.createDefaultButton({
-  //     container: '#btnKakao', // 카카오공유버튼ID
-  //     objectType: 'feed',
-  //     content: {
-  //       title: "개발새발", // 보여질 제목
-  //       description: "개발새발 블로그입니다", // 보여질 설명
-  //       imageUrl: "devpad.tistory.com/", // 콘텐츠 URL
-  //       link: {
-  //          mobileWebUrl: "devpad.tistory.com/",
-  //          webUrl: "devpad.tistory.com/"
-  //       }
-  //     }
-  //   });
-  // }
-
   const handleClick = async () => {
     try {
       const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
@@ -139,7 +118,6 @@ const SharerBtn: FC = () => {
         type="button"
         onClick={kakaoShare}
       >
-        {/* <img src={kakaoLogo} alt="kakao" /> */}
         <img src={kakaoCircle} alt="카톡공유하기" className="opacity-50 -z-10" />
       </button>
     </>
