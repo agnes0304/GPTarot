@@ -49,7 +49,6 @@ const SharerBtn: FC = () => {
       console.error("Error copying to clipboard", err);
       // Using fallback in case of an error with Clipboard API
       copyToClipboardFallback(url);
-      alert(`Failed to copy the link. Please try again.`);
     }
     // try {
     //   // copy
