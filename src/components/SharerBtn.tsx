@@ -19,16 +19,16 @@ const SharerBtn: FC = () => {
 
   //  Clipboard API 사용 제한이 있어서, fallback 함수를 만들어줌. -> TODO
   const copyToClipboardFallback = (url: string) => {
-    const textarea = document.createElement('textarea');
+    const textarea = document.createElement("textarea");
     textarea.textContent = url;
     document.body.appendChild(textarea);
     textarea.select();
 
     try {
-      document.execCommand('copy');
+      document.execCommand("copy");
       alert("링크가 복사되었습니다.");
     } catch (err) {
-      console.error('Fallback copy method failed', err);
+      console.error("Fallback copy method failed", err);
     }
 
     document.body.removeChild(textarea);
@@ -37,17 +37,20 @@ const SharerBtn: FC = () => {
   // Clipboard API 사용
   const copyToClipboard = async (url: string) => {
     try {
-      const permission = await navigator.permissions.query({ name: 'clipboard-write' as PermissionName });
+      const permission = await navigator.permissions.query({
+        // @ts-ignore
+        name: "clipboard-write",
+      });
 
-      if (permission.state === 'granted' || permission.state === 'prompt') {
+      if (permission.state === "granted" || permission.state === "prompt") {
         await navigator.clipboard.writeText(url);
-        alert('The link has been copied.');
-      } else if (document.queryCommandSupported('copy')) {
+        alert("The link has been copied.");
+      } else {
         copyToClipboardFallback(url);
       }
     } catch (err) {
       alert(`링크 복사에 실패했습니다. ${err}`);
-      console.error('Error copying to clipboard', err);
+      console.error("Error copying to clipboard", err);
     }
 
     // try {
