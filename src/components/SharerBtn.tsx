@@ -71,9 +71,9 @@ const SharerBtn: FC = () => {
 
   const handleClick = async () => {
     try {
-      await axiosInstance.post("/save", bodyData);
-      const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
-      copyToClipboard(url);
+      // await axiosInstance.post("/save", bodyData);
+      // const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
+      copyToClipboard('testing now');
     } catch (error) {
       console.error(error);
     }
