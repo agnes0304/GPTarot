@@ -73,6 +73,7 @@ const SharerBtn: FC = () => {
     try {
       const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
       copyToClipboard(url);
+
       await axiosInstance.post("/save", bodyData);
     } catch (error) {
       console.error(error);
