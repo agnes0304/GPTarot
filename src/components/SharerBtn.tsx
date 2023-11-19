@@ -1,21 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FC } from "react";
-// import { useParams } from "react-router-dom";
-// import { useApiResponse } from "../hooks/useApiResponse";
-// import axiosInstance from "../axios/axiosInstance";
+import { useParams } from "react-router-dom";
+import { useApiResponse } from "../hooks/useApiResponse";
+import axiosInstance from "../axios/axiosInstance";
 
 // db에 post하는 요청보내고 url 생성해줘야 함.
 const SharerBtn: FC = () => {
-  // const { apiResponse } = useApiResponse();
-  // const { nanoId } = useParams();
-  // const bodyData = {
-  //   id: nanoId,
-  //   prompt: apiResponse.prompt,
-  //   card: apiResponse.card,
-  //   result: apiResponse.result,
-  //   cardId: apiResponse.cardId,
-  // };
+  const { apiResponse } = useApiResponse();
+  const { nanoId } = useParams();
+  const bodyData = {
+    id: nanoId,
+    prompt: apiResponse.prompt,
+    card: apiResponse.card,
+    result: apiResponse.result,
+    cardId: apiResponse.cardId,
+  };
 
   //  Clipboard API 사용 제한이 있어서, fallback 함수를 만들어줌. -> TODO
   const copyToClipboardFallback = (url: string) => {
@@ -71,9 +71,9 @@ const SharerBtn: FC = () => {
 
   const handleClick = async () => {
     try {
-      // await axiosInstance.post("/save", bodyData);
-      // const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
-      copyToClipboard("testing now");
+      const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
+      copyToClipboard(url);
+      await axiosInstance.post("/save", bodyData);
     } catch (error) {
       console.error(error);
     }
