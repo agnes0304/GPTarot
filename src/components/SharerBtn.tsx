@@ -139,7 +139,7 @@ const SharerBtn: FC = () => {
         // onClick={kakaoShare}
       >
         {/* <img src={kakaoLogo} alt="kakao" /> */}
-        <img src={kakaoCircle} alt="카톡공유하기" className="opacity-60" />
+        <img src={kakaoCircle} alt="카톡공유하기" className="opacity-60 -z-10" />
       </button>
     </>
   );
