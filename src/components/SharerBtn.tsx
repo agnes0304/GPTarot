@@ -55,11 +55,10 @@ const SharerBtn: FC = () => {
     }
   };
 
-  // TODO: 트위터 공유하기
+  // 트위터 공유하기
   const twitterShare = () => {
     const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
     const text = `GPT가 알려주는 오늘의 운세`;
-    // const hashtags = "GPTarot";
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       text
     )}&url=${encodeURIComponent(url)}`;
