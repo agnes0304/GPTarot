@@ -17,7 +17,7 @@ const SharerBtn: FC = () => {
     cardId: apiResponse.cardId,
   };
   
-  //  Clipboard API 사용 제한이 있어서, fallback 함수를 만들어줌.
+  //  Clipboard API 사용 제한이 있어서, fallback 함수를 만들어줌. -> TODO
   // const copyToClipboardFallback = (url: string) => {
   //   const textarea = document.createElement('textarea');
   //   textarea.textContent = url;
@@ -42,6 +42,18 @@ const SharerBtn: FC = () => {
       console.error('복사에 실패했습니다', err);
     }
   };
+
+  // TODO: 트위터 공유하기
+  // const twitterShare = () => {
+  //   const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
+  //   const text = `GPT가 알려주는 오늘의 운세`;
+  //   // const hashtags = "GPTarot";
+  //   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+  //   window.open(twitterUrl);
+  // };
+
+  // TODO: 카카오톡 공유하기
+  // const kakaoShare = () => {};
 
   const handleClick = async () => {
     try {
