@@ -16,34 +16,49 @@ const SharerBtn: FC = () => {
     result: apiResponse.result,
     cardId: apiResponse.cardId,
   };
-  
+
   //  Clipboard API 사용 제한이 있어서, fallback 함수를 만들어줌. -> TODO
-  // const copyToClipboardFallback = (url: string) => {
-  //   const textarea = document.createElement('textarea');
-  //   textarea.textContent = url;
-  //   document.body.appendChild(textarea);
-  //   textarea.select();
+  const copyToClipboardFallback = (url: string) => {
+    const textarea = document.createElement('textarea');
+    textarea.textContent = url;
+    document.body.appendChild(textarea);
+    textarea.select();
 
-  //   try {
-  //     document.execCommand('copy');
-  //     alert("링크가 복사되었습니다.");
-  //   } catch (err) {
-  //     console.error('Fallback copy method failed', err);
-  //   }
+    try {
+      document.execCommand('copy');
+      alert("링크가 복사되었습니다.");
+    } catch (err) {
+      console.error('Fallback copy method failed', err);
+    }
 
-  //   document.body.removeChild(textarea);
-  // };
+    document.body.removeChild(textarea);
+  };
 
   // Clipboard API 사용
   const copyToClipboard = async (url: string) => {
     try {
-      await navigator.clipboard.writeText(url);
-      console.log('복사에 성공했습니다!');
-      alert("링크가 복사되었습니다!");
+      const permission = await navigator.permissions.query({ name: 'clipboard-write' as PermissionName });
+
+      if (permission.state === 'granted' || permission.state === 'prompt') {
+        await navigator.clipboard.writeText(url);
+        alert('The link has been copied.');
+      } else if (document.queryCommandSupported('copy')) {
+        copyToClipboardFallback(url);
+      }
     } catch (err) {
       alert(`링크 복사에 실패했습니다. ${err}`);
-      console.error('복사에 실패했습니다', err);
+      console.error('Error copying to clipboard', err);
     }
+
+    // try {
+    //   // copy
+    //   await navigator.clipboard.writeText(url);
+    //   console.log("복사에 성공했습니다!");
+    //   alert("링크가 복사되었습니다!");
+    // } catch (err) {
+    //   alert(`링크 복사에 실패했습니다. ${err}`);
+    //   console.error("복사에 실패했습니다", err);
+    // }
   };
 
   // TODO: 트위터 공유하기
@@ -69,7 +84,11 @@ const SharerBtn: FC = () => {
   };
 
   return (
-    <button className="flex justify-center items-center w-[40px] h-[40px] p-3 rounded-full cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400 hover:bg-violet-500/50" type="button" onClick={handleClick}>
+    <button
+      className="flex justify-center items-center w-[40px] h-[40px] p-3 rounded-full cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400 hover:bg-violet-500/50"
+      type="button"
+      onClick={handleClick}
+    >
       <FontAwesomeIcon icon={faArrowUpFromBracket} />
     </button>
   );
