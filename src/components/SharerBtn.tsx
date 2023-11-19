@@ -134,12 +134,12 @@ const SharerBtn: FC = () => {
         <FontAwesomeIcon icon={faTwitter} />
       </button>
       <button
-        className="flex justify-center items-center w-[40px] h-[40px] rounded-full cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400 hover:bg-violet-500/50"
+        className="flex justify-center items-center w-[40px] h-[40px] p-2 rounded-full cursor-pointer text-violet-400/50 hover:text-violet-400 hover:border-violet-400 hover:bg-violet-500/50"
         type="button"
         // onClick={kakaoShare}
       >
         {/* <img src={kakaoLogo} alt="kakao" /> */}
-        <img src={kakaoCircle} alt="카톡공유하기" />
+        <img src={kakaoCircle} alt="카톡공유하기" className="opacity-60" />
       </button>
     </>
   );
