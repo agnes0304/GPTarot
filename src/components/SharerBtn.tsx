@@ -39,8 +39,9 @@ const SharerBtn: FC = () => {
     try {
       await navigator.clipboard.writeText(url);
       console.log('복사에 성공했습니다!');
-      alert("링크가 복사되었습니다.");
+      alert("링크가 복사되었습니다!");
     } catch (err) {
+      alert(`링크 복사에 실패했습니다. ${err}`);
       console.error('복사에 실패했습니다', err);
     }
   };
