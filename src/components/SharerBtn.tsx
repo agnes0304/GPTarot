@@ -16,45 +16,38 @@ const SharerBtn: FC = () => {
     result: apiResponse.result,
     cardId: apiResponse.cardId,
   };
+  
+  //  Clipboard API 사용 제한이 있어서, fallback 함수를 만들어줌.
+  // const copyToClipboardFallback = (url: string) => {
+  //   const textarea = document.createElement('textarea');
+  //   textarea.textContent = url;
+  //   document.body.appendChild(textarea);
+  //   textarea.select();
 
-  const copyToClipboardFallback = (url: string) => {
-    const textarea = document.createElement('textarea');
-    textarea.textContent = url;
-    document.body.appendChild(textarea);
-    textarea.select();
+  //   try {
+  //     document.execCommand('copy');
+  //     alert("링크가 복사되었습니다.");
+  //   } catch (err) {
+  //     console.error('Fallback copy method failed', err);
+  //   }
 
-    try {
-      document.execCommand('copy');
-      alert("링크가 복사되었습니다.");
-    } catch (err) {
-      console.error('Fallback copy method failed', err);
-    }
+  //   document.body.removeChild(textarea);
+  // };
 
-    document.body.removeChild(textarea);
-  };
-
+  // Clipboard API 사용
   const copyToClipboard = async (url: string) => {
     try {
-      const permission = await navigator.permissions.query({ name: 'clipboard-write' as PermissionName });
-
-      if (permission.state === 'granted' || permission.state === 'prompt') {
-        await navigator.clipboard.writeText(url);
-        alert("링크가 복사되었습니다.");
-      } else if (document.queryCommandSupported('copy')) {
-        copyToClipboardFallback(url);
-      }
-    } catch (error) {
-      console.error(error);
+      await navigator.clipboard.writeText(url);
+    } catch (err) {
+      console.error('복사에 실패했습니다', err);
     }
   };
 
   const handleClick = async () => {
     try {
       await axiosInstance.post("/save", bodyData);
-
       const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
       copyToClipboard(url);
-
     } catch (error) {
       console.error(error);
     }
