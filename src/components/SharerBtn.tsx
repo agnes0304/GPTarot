@@ -37,22 +37,20 @@ const SharerBtn: FC = () => {
   // Clipboard API 사용
   const copyToClipboard = async (url: string) => {
     try {
-      const permission = await navigator.permissions.query({
-        // @ts-ignore
-        name: "clipboard-write",
-      });
-
-      if (permission.state === "granted" || permission.state === "prompt") {
+      // Check if the Clipboard API is supported
+      if (navigator.clipboard) {
         await navigator.clipboard.writeText(url);
         alert("The link has been copied.");
       } else {
+        // Fallback if Clipboard API is not available
         copyToClipboardFallback(url);
       }
     } catch (err) {
-      alert(`링크 복사에 실패했습니다. ${err}`);
       console.error("Error copying to clipboard", err);
+      // Using fallback in case of an error with Clipboard API
+      copyToClipboardFallback(url);
+      alert(`Failed to copy the link. Please try again.`);
     }
-
     // try {
     //   // copy
     //   await navigator.clipboard.writeText(url);
