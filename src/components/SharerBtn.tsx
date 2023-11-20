@@ -77,7 +77,7 @@ const SharerBtn: FC = () => {
   useEffect(() => {
     Kakao.clenup();
     Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
-    console.log("kakao init");
+    alert("kakao init");
   }
   , []);
 
