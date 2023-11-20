@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useApiResponse } from "../hooks/useApiResponse";
 import axiosInstance from "../axios/axiosInstance";
@@ -74,12 +74,12 @@ const SharerBtn: FC = () => {
     window.open(twitterUrl);
   };
 
-  // useEffect(() => {
-  //   Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
-  //   console.log(Kakao.isInitialized());
-  // }, []);
+  useEffect(() => {
+    Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
+    console.log(Kakao.isInitialized());
+  }, []);
 
-  // TODO: 카카오톡 공유하기
+  // 카카오톡 공유하기
   const kakaoShare = async () => {
     if(!Kakao.isInitialized()){
       Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
