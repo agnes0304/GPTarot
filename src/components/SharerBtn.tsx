@@ -77,35 +77,38 @@ const SharerBtn: FC = () => {
   useEffect(() => {
     Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
     console.log(Kakao.isInitialized());
-  }
-  , []);
+  }, []);
 
   // TODO: 카카오톡 공유하기
-  const kakaoShare = () => {
-    // alert("준비중입니다. 링크 복사를 이용해주세요.");
-    const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
+  const kakaoShare = async () => {
+    try {
+      await axiosInstance.post("/save", bodyData);
+      const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
 
-    Kakao.Share.sendDefault({
-      objectType: "feed",
-      content: {
-        title: "GPTarot | 지피타로",
-        description: "지피티가 읽어주는 타로점 | 오늘의 운세",
-        imageUrl: `https://gptarot.jiwoo.best/${bodyData.cardId}.webp`,
-        link: {
-          mobileWebUrl: url,
-          webUrl: url,
-        },
-      },
-      buttons: [
-        {
-          title: "나도 질문하기",
+      Kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
+          title: "GPTarot | 지피타로",
+          description: "지피티가 읽어주는 타로점 | 오늘의 운세",
+          imageUrl: `https://gptarot.jiwoo.best/${bodyData.cardId}.webp`,
           link: {
-            mobileWebUrl: 'https://gptarot.jiwoo.best',
-            webUrl: 'https://gptarot.jiwoo.best',
+            mobileWebUrl: url,
+            webUrl: url,
           },
         },
-      ],
-    });
+        buttons: [
+          {
+            title: "나도 질문하기",
+            link: {
+              mobileWebUrl: "https://gptarot.jiwoo.best",
+              webUrl: "https://gptarot.jiwoo.best",
+            },
+          },
+        ],
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleClick = async () => {
