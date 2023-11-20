@@ -89,7 +89,7 @@ const SharerBtn: FC = () => {
         objectType: "feed",
         content: {
           title: "GPTarot | 지피타로",
-          description: "지피티가 읽어주는 타로점 | 오늘의 운세",
+          description: `${bodyData.prompt}`,
           imageUrl: `https://gptarot.jiwoo.best/${bodyData.cardId}.webp`,
           link: {
             mobileWebUrl: url,
@@ -97,6 +97,13 @@ const SharerBtn: FC = () => {
           },
         },
         buttons: [
+          {
+            title: "친구의 운세 보기",
+            link: {
+              mobileWebUrl: url,
+              webUrl: url,
+            },
+          },
           {
             title: "나도 질문하기",
             link: {
