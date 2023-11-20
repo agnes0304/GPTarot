@@ -74,13 +74,17 @@ const SharerBtn: FC = () => {
     window.open(twitterUrl);
   };
 
-  useEffect(() => {
-    Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
-    console.log(Kakao.isInitialized());
-  }, []);
+  // useEffect(() => {
+  //   Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
+  //   console.log(Kakao.isInitialized());
+  // }, []);
 
   // TODO: 카카오톡 공유하기
   const kakaoShare = async () => {
+    if(!Kakao.isInitialized()){
+      Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
+    }
+    
     try {
       await axiosInstance.post("/save", bodyData);
       const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
