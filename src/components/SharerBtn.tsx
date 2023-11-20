@@ -1,11 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useApiResponse } from "../hooks/useApiResponse";
 import axiosInstance from "../axios/axiosInstance";
 import kakaoCircle from "../assets/kakaoCircle.png";
+
+declare global {
+  interface Window {
+    Kakao: any;
+  }
+}
+
+const { Kakao } = window;
 
 // db에 post하는 요청보내고 url 생성해줘야 함.
 const SharerBtn: FC = () => {
@@ -66,24 +74,39 @@ const SharerBtn: FC = () => {
     window.open(twitterUrl);
   };
 
+  useEffect(() => {
+    Kakao.clenup();
+    Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
+    console.log("kakao init");
+  }
+  , []);
+
   // TODO: 카카오톡 공유하기
   const kakaoShare = () => {
-    alert("준비중입니다. 링크 복사를 이용해주세요.");
-    // const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
-    // // @ts-ignore
-    // Kakao.Link.createDefaultButton({
-    //   container: "#btnKakao", // 카카오공유버튼ID
-    //   objectType: "feed",
-    //   content: {
-    //     title: "GPTarot | 지피타로",
-    //     description: "지피티가 읽어주는 타로점",
-    //     imageUrl: `https://gptarot.jiwoo.best/${bodyData.cardId}.webp`,
-    //     link: {
-    //       mobileWebUrl: url,
-    //       webUrl: url,
-    //     },
-    //   },
-    // });
+    // alert("준비중입니다. 링크 복사를 이용해주세요.");
+    const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
+
+    Kakao.Share.sendDefault({
+      objectType: "feed",
+      content: {
+        title: "GPTarot | 지피타로",
+        description: "지피티가 읽어주는 타로점 | 오늘의 운세",
+        imageUrl: `https://gptarot.jiwoo.best/${bodyData.cardId}.webp`,
+        link: {
+          mobileWebUrl: url,
+          webUrl: url,
+        },
+      },
+      buttons: [
+        {
+          title: "나도 질문하기",
+          link: {
+            mobileWebUrl: 'https://gptarot.jiwoo.best',
+            webUrl: 'https://gptarot.jiwoo.best',
+          },
+        },
+      ],
+    });
   };
 
   const handleClick = async () => {
@@ -118,7 +141,11 @@ const SharerBtn: FC = () => {
         type="button"
         onClick={kakaoShare}
       >
-        <img src={kakaoCircle} alt="카톡공유하기" className="opacity-50 -z-10" />
+        <img
+          src={kakaoCircle}
+          alt="카톡공유하기"
+          className="opacity-50 -z-10"
+        />
       </button>
     </>
   );
