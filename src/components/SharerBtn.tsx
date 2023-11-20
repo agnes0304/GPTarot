@@ -88,7 +88,7 @@ const SharerBtn: FC = () => {
       Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
-          title: "GPTarot | 지피타로",
+          title: "GPTarot | 지피타로 | 오늘의 운세",
           description: `${bodyData.prompt}`,
           imageUrl: `https://gptarot.jiwoo.best/${bodyData.cardId}.webp`,
           link: {
@@ -98,7 +98,7 @@ const SharerBtn: FC = () => {
         },
         buttons: [
           {
-            title: "친구의 운세 보기",
+            title: "결과 보기",
             link: {
               mobileWebUrl: url,
               webUrl: url,
