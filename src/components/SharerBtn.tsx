@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { useParams } from "react-router-dom";
 import { useApiResponse } from "../hooks/useApiResponse";
 import axiosInstance from "../axios/axiosInstance";
@@ -84,7 +84,7 @@ const SharerBtn: FC = () => {
     if(!Kakao.isInitialized()){
       Kakao.init(import.meta.env.VITE_KAKAO_API_KEY);
     }
-    
+
     try {
       await axiosInstance.post("/save", bodyData);
       const url = `https://gptarot.jiwoo.best/answer/${nanoId}`;
