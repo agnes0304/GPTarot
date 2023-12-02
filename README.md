@@ -1,6 +1,9 @@
 # GPTarot | 지피타로
 
 <div align="center">
+  
+<img width="350" alt="스크린샷 2023-12-03 오전 3 14 09" src="https://github.com/agnes0304/GPTarot/assets/86249667/1ffa0ad6-3a2e-42ad-a516-8d3855494ba6">
+<img width="350" alt="스크린샷 2023-12-03 오전 3 13 19" src="https://github.com/agnes0304/GPTarot/assets/86249667/fbf2f0d8-42db-4408-b268-dc06a31da04a">
 
 </div>
 
