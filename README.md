@@ -2,7 +2,7 @@
 
 <div align="center">
   
-<img width="350" alt="스크린샷 2023-12-03 오전 3 14 09" src="https://github.com/agnes0304/GPTarot/assets/86249667/1ffa0ad6-3a2e-42ad-a516-8d3855494ba6">
+<img width="350" alt="스크린샷 2023-12-03 오전 3 14 09" src="https://github.com/agnes0304/GPTarot/assets/86249667/1ffa0ad6-3a2e-42ad-a516-8d3855494ba6">&nbsp;
 <img width="350" alt="스크린샷 2023-12-03 오전 3 13 19" src="https://github.com/agnes0304/GPTarot/assets/86249667/fbf2f0d8-42db-4408-b268-dc06a31da04a">
 
 </div>
@@ -19,6 +19,7 @@ OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대�
 ## About project
 - 👤 개인 / 2023년 10월 ~ 11월
 - 배포링크: <a href="https://gptarot.jiwoo.best">GPTarot</a>
+- 서버 레포지토리: <a href="https://github.com/agnes0304/tarot-reader-backend">tarot-reader-backend</a>
 
 </br></br>
 
