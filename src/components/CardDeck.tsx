@@ -54,11 +54,11 @@ const CardDeck: FC<CardDeckProps> = ({ selectedPrompt, setCard }) => {
             style={{ transition: "opacity 1s ease", opacity: opacity }}
           >
             <div className="flex flex-col items-center gap-4">
-              <h1 className="text-violet-400 text-lg text-center w-[90%]">
+              <h1 className="text-violet-400 text-lg text-center w-[90vw]">
                 "{selectedPrompt}"
               </h1>
               {isMobile ? (
-                <p className="text-gray-500 text-sm mb-6 text-center">
+                <p className="text-gray-500 text-sm mb-6 text-center w-[90vw]">
                   {language === "ko"
                     ? InnerText.mobileDeck.ko
                     : InnerText.mobileDeck.en}
