@@ -12,7 +12,7 @@ const Error: FC = () => {
   };
   return (
     <div
-      className={`${styles["animate-float"]} flex flex-col items-center text-2xl justify-center gap-4`}
+      className={`${styles["animate-float"]} flex flex-col mt-[100px] items-center text-2xl justify-center gap-4`}
     >
       <h1 className="text-gray-200">Oops! Sorry...</h1>
       <div

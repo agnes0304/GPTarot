@@ -44,7 +44,7 @@ const Result: FC = () => {
         style={{ transition: "opacity 1s ease", opacity: opacity }}
       >
         {userQuestion && (
-          <h1 className="text-violet-400 text-lg text-center w-[92%]">
+          <h1 className="text-violet-400 text-lg text-center w-[92vw]">
             "{userQuestion}"
           </h1>
         )}
