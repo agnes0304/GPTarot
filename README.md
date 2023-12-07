@@ -1,13 +1,12 @@
-# GPTarot | 지피타로
+# 지피타로 | GPTarot
 
 <div align="center">
-  
-<img width="350" alt="스크린샷 2023-12-03 오전 3 14 09" src="https://github.com/agnes0304/GPTarot/assets/86249667/1ffa0ad6-3a2e-42ad-a516-8d3855494ba6">&nbsp;
-<img width="350" alt="스크린샷 2023-12-03 오전 3 13 19" src="https://github.com/agnes0304/GPTarot/assets/86249667/fbf2f0d8-42db-4408-b268-dc06a31da04a">
+
+![한글버전 인트로-min](https://github.com/agnes0304/GPTarot/assets/86249667/f92fc85b-047e-4d43-ae9c-6a4ca058b5e3)
 
 </div>
 
-## About "GPTarot"
+## 지피타로란?
 
 OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대해 답을 얻고 SNS을 통해 지인과 결과를 공유할 수 있는 서비스입니다. 
 
@@ -16,14 +15,14 @@ OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대�
 
 
 
-## About project
+## 프로젝트 정보
 - 👤 개인 / 2023년 10월 ~ 11월
 - 배포링크: <a href="https://gptarot.jiwoo.best">GPTarot</a>
 - 서버 레포지토리: <a href="https://github.com/agnes0304/tarot-reader-backend">tarot-reader-backend</a>
 
 </br></br>
 
-## Tools
+## 개발 환경
 
 <h4 align="center">Client</h4>
 <div align="center">
@@ -64,3 +63,22 @@ OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대�
 </br></br>
 
 ## Overview
+
+
+</br></br>
+
+---
+
+</br>
+
+# GPTarot
+
+GPTarot is where AI meets mysticism, offering a unique digital tarot reading experience. It's an engaging way to explore fortune-telling with a modern twist, designed to connect and share with friends.
+
+Technically, GPTarot is built using TypeScript for type-safe code and React for dynamic user interfaces. The backend is powered by JavaScript with Express.js, and data is managed using MySQL. Hosted on Vercel and Fly.io, the project benefits from the scalability and performance of these platforms.
+
+<div align="center">
+  
+![영어버전 인트로-min](https://github.com/agnes0304/GPTarot/assets/86249667/1c7db3a6-f367-48f1-8228-6c453c6690f2)
+</div>
+
