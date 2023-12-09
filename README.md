@@ -71,7 +71,7 @@ OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대�
   - <a href="https://velog.io/@inmyhead/%ED%81%B4%EB%A6%BD%EB%B3%B4%EB%93%9C-%EB%B3%B5%EC%82%AC-%EB%A7%81%ED%81%AC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0-%EA%B8%B0%EB%8A%A5-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EC%82%AC%ED%8C%8C%EB%A6%AC%ED%81%AC%EB%A1%AC-%EC%95%A0%ED%94%8C%EA%B8%B0%EA%B8%B0-%EC%97%90%EB%9F%AC">관련 글 바로가기</a>
 - 카카오톡 공유하기 구현
   - <a href="https://velog.io/@inmyhead/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%8A%B8%EC%9C%84%ED%84%B0">관련 글 바로가기</a>
-  - <a href="">데모 영상 바로가기</a>
+  - <a href="https://github.com/agnes0304/GPTarot/tree/main?tab=readme-ov-file#-%EB%A7%81%ED%81%AC-%ED%81%B4%EB%A6%BD%EB%B3%B4%EB%93%9C-%EB%B3%B5%EC%82%AC-%EB%B0%8F-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0">데모 영상 바로가기</a>
 
 </br>
 
