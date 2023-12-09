@@ -6,7 +6,7 @@
 
 </div>
 
-## 지피타로란?
+## 지피타로?
 
 OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대해 답을 얻고 SNS을 통해 지인과 결과를 공유할 수 있는 서비스입니다. 
 
@@ -22,7 +22,7 @@ OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대�
 
 </br></br>
 
-## 개발 환경
+## 개발 환경 및 기술 스택
 
 <h4 align="center">Client</h4>
 <div align="center">
@@ -62,10 +62,42 @@ OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대�
 
 </br></br>
 
-## Overview
+## 구현 기능
+
+### 공유 기능
+
+- 클립보드 복사 구현
+  - 다양한 환경(웹,모바일,사파리,크롬 등)에 대응할 수 있는 개발
+  - <a href="https://velog.io/@inmyhead/%ED%81%B4%EB%A6%BD%EB%B3%B4%EB%93%9C-%EB%B3%B5%EC%82%AC-%EB%A7%81%ED%81%AC-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0-%EA%B8%B0%EB%8A%A5-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EC%82%AC%ED%8C%8C%EB%A6%AC%ED%81%AC%EB%A1%AC-%EC%95%A0%ED%94%8C%EA%B8%B0%EA%B8%B0-%EC%97%90%EB%9F%AC">관련 글 바로가기</a>
+- 카카오톡 공유하기 구현
+  - <a href="https://velog.io/@inmyhead/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%8A%B8%EC%9C%84%ED%84%B0">관련 글 바로가기</a>
+  - <a href="">데모 영상 바로가기</a>
+
+</br>
+
+### 사용자 경험 고려한 컴포넌트 구성
+
+- 웹 클릭을 고려한 카드 스프레드와 모바일 터치를 고려한 카드 스프레드 구분
+  - <a href="">데모 영상 바로가기</a>
+- Open AI의 한국어를 보완하기 위해 번역 API, DeepL을 활용하여 두 가지 언어 지원
+- 추가 api 요청으로 발생하는 응답 지연에 대한 사용자 경험 개선을 위해 별도 안내 컴포넌트 추가
 
 
 </br></br>
+
+## 데모 영상
+
+### 🎦 웹 카드스프레드, 모바일 카드 스프레드
+
+![웹 용 카드 스프레드, 앱 용 카드 스프레드](https://github.com/agnes0304/chronos-nextjs/assets/86249667/ca1c65dd-f139-4009-93ca-65db24a5f5a9)
+
+
+### 🎦 링크 클립보드 복사 및 카카오톡 공유하기
+
+![링크공유 및 카톡공유](https://github.com/agnes0304/chronos-nextjs/assets/86249667/900d95a9-f5f7-4cff-93db-81e2c6f3fe70)
+
+
+</br></br></br>
 
 ---
 
