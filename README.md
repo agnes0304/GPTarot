@@ -78,7 +78,7 @@ OpenAI api, DeepL api를 활용하여 유저가 작성한 운세 질문에 대�
 ### 사용자 경험 고려한 컴포넌트 구성
 
 - 웹 클릭을 고려한 카드 스프레드와 모바일 터치를 고려한 카드 스프레드 구분
-  - <a href="">데모 영상 바로가기</a>
+  - <a href="https://github.com/agnes0304/GPTarot?tab=readme-ov-file#-%EC%9B%B9-%EC%B9%B4%EB%93%9C%EC%8A%A4%ED%94%84%EB%A0%88%EB%93%9C-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EC%B9%B4%EB%93%9C-%EC%8A%A4%ED%94%84%EB%A0%88%EB%93%9C">데모 영상 바로가기</a>
 - Open AI의 한국어를 보완하기 위해 번역 API, DeepL을 활용하여 두 가지 언어 지원
 - 추가 api 요청으로 발생하는 응답 지연에 대한 사용자 경험 개선을 위해 별도 안내 컴포넌트 추가
 
