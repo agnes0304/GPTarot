@@ -2,7 +2,8 @@
 
 <div align="center">
 
-![한글버전 인트로-min](https://github.com/agnes0304/GPTarot/assets/86249667/f92fc85b-047e-4d43-ae9c-6a4ca058b5e3)
+![한글 미리보기](https://github.com/agnes0304/chronos-nextjs/assets/86249667/8c627db1-63b7-4f28-8bed-6666096322cc)
+
 
 </div>
 
@@ -111,6 +112,6 @@ Technically, GPTarot is built using TypeScript for type-safe code and React for 
 
 <div align="center">
   
-![영어버전 인트로-min](https://github.com/agnes0304/GPTarot/assets/86249667/1c7db3a6-f367-48f1-8228-6c453c6690f2)
+![영어 미리보기](https://github.com/agnes0304/chronos-nextjs/assets/86249667/c21ae2bb-8e9c-4a57-b4eb-0709053d84bf)
 </div>
 
